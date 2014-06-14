@@ -7,12 +7,30 @@
 //
 
 #import "AppDelegate.h"
+#import "GCNetworkReachability.h"
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    self->reach = [GCNetworkReachability reachabilityWithIPv6AddressString:@"2001:4860:4860::8888"];
+    [self->reach startMonitoringNetworkReachabilityWithHandler:^(GCNetworkReachabilityStatus status) {
+        switch (status) {
+            case GCNetworkReachabilityStatusNotReachable:
+                NSLog(@"Not reachable!");
+                break;
+                
+            case GCNetworkReachabilityStatusWiFi:
+                NSLog(@"Reachable via WiFi!");
+                break;
+                
+            case GCNetworkReachabilityStatusWWAN:
+                NSLog(@"Reachable via WWAN");
+                
+            default:
+                break;
+        }
+    }];
 }
 
 - (void) awakeFromNib {
@@ -22,4 +40,11 @@
     self.statusBar.highlightMode = YES;
 }
 
+- (IBAction)toggleAutoSetup:(NSMenuItem *)sender {
+    NSInteger state = [sender state];
+    if (state == NSOffState)
+        [sender setState:NSOnState];
+    else
+        [sender setState:NSOffState];
+}
 @end

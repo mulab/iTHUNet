@@ -671,12 +671,14 @@
                 <menuItem title="Item" id="cXp-iw-ErH">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="Item 2" id="PH0-h5-E8f">
+                <menuItem title="Start at login" id="PH0-h5-E8f">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="toggleAutoSetup:" target="Voe-Tx-rLC" id="MKf-dC-LwN"/>
+                    </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="ooL-bN-Pcx"/>
-                <menuItem title="Quit" id="dsi-t4-daJ">
-                    <modifierMask key="keyEquivalentModifierMask"/>
+                <menuItem title="Quit" keyEquivalent="q" id="dsi-t4-daJ">
                     <connections>
                         <action selector="terminate:" target="-3" id="XJ5-WY-fy4"/>
                     </connections>
