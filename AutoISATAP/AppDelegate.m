@@ -15,4 +15,11 @@
     // Insert code here to initialize your application
 }
 
+- (void) awakeFromNib {
+    self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+    self.statusBar.title = @"ISATAP";
+    self.statusBar.menu = self.statusMenu;
+    self.statusBar.highlightMode = YES;
+}
+
 @end
