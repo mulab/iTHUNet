@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DA70E0FC194C386B00540D41 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA70E0FB194C386B00540D41 /* Cocoa.framework */; };
+		DA70E106194C386B00540D41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA70E104194C386B00540D41 /* InfoPlist.strings */; };
+		DA70E108194C386B00540D41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA70E107194C386B00540D41 /* main.m */; };
+		DA70E10C194C386B00540D41 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DA70E10A194C386B00540D41 /* Credits.rtf */; };
+		DA70E10F194C386B00540D41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA70E10E194C386B00540D41 /* AppDelegate.m */; };
+		DA70E112194C386B00540D41 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA70E110194C386B00540D41 /* MainMenu.xib */; };
+		DA70E114194C386B00540D41 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA70E113194C386B00540D41 /* Images.xcassets */; };
+		DA70E11B194C386C00540D41 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA70E11A194C386C00540D41 /* XCTest.framework */; };
+		DA70E11C194C386C00540D41 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA70E0FB194C386B00540D41 /* Cocoa.framework */; };
+		DA70E124194C386C00540D41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA70E122194C386C00540D41 /* InfoPlist.strings */; };
+		DA70E126194C386C00540D41 /* AutoISATAPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA70E125194C386C00540D41 /* AutoISATAPTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DA70E11D194C386C00540D41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA70E0F0194C386B00540D41 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA70E0F7194C386B00540D41;
+			remoteInfo = AutoISATAP;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DA70E0F8194C386B00540D41 /* AutoISATAP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoISATAP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA70E0FB194C386B00540D41 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		DA70E0FE194C386B00540D41 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		DA70E0FF194C386B00540D41 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DA70E100194C386B00540D41 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DA70E103194C386B00540D41 /* AutoISATAP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AutoISATAP-Info.plist"; sourceTree = "<group>"; };
+		DA70E105194C386B00540D41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DA70E107194C386B00540D41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DA70E109194C386B00540D41 /* AutoISATAP-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AutoISATAP-Prefix.pch"; sourceTree = "<group>"; };
+		DA70E10B194C386B00540D41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		DA70E10D194C386B00540D41 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DA70E10E194C386B00540D41 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DA70E111194C386B00540D41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		DA70E113194C386B00540D41 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DA70E119194C386C00540D41 /* AutoISATAPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoISATAPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA70E11A194C386C00540D41 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		DA70E121194C386C00540D41 /* AutoISATAPTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AutoISATAPTests-Info.plist"; sourceTree = "<group>"; };
+		DA70E123194C386C00540D41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DA70E125194C386C00540D41 /* AutoISATAPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoISATAPTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA70E0F5194C386B00540D41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA70E0FC194C386B00540D41 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA70E116194C386C00540D41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA70E11C194C386C00540D41 /* Cocoa.framework in Frameworks */,
+				DA70E11B194C386C00540D41 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DA70E0EF194C386B00540D41 = {
+			isa = PBXGroup;
+			children = (
+				DA70E101194C386B00540D41 /* AutoISATAP */,
+				DA70E11F194C386C00540D41 /* AutoISATAPTests */,
+				DA70E0FA194C386B00540D41 /* Frameworks */,
+				DA70E0F9194C386B00540D41 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DA70E0F9194C386B00540D41 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA70E0F8194C386B00540D41 /* AutoISATAP.app */,
+				DA70E119194C386C00540D41 /* AutoISATAPTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA70E0FA194C386B00540D41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA70E0FB194C386B00540D41 /* Cocoa.framework */,
+				DA70E11A194C386C00540D41 /* XCTest.framework */,
+				DA70E0FD194C386B00540D41 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA70E0FD194C386B00540D41 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA70E0FE194C386B00540D41 /* AppKit.framework */,
+				DA70E0FF194C386B00540D41 /* CoreData.framework */,
+				DA70E100194C386B00540D41 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		DA70E101194C386B00540D41 /* AutoISATAP */ = {
+			isa = PBXGroup;
+			children = (
+				DA70E10D194C386B00540D41 /* AppDelegate.h */,
+				DA70E10E194C386B00540D41 /* AppDelegate.m */,
+				DA70E110194C386B00540D41 /* MainMenu.xib */,
+				DA70E113194C386B00540D41 /* Images.xcassets */,
+				DA70E102194C386B00540D41 /* Supporting Files */,
+			);
+			path = AutoISATAP;
+			sourceTree = "<group>";
+		};
+		DA70E102194C386B00540D41 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DA70E103194C386B00540D41 /* AutoISATAP-Info.plist */,
+				DA70E104194C386B00540D41 /* InfoPlist.strings */,
+				DA70E107194C386B00540D41 /* main.m */,
+				DA70E109194C386B00540D41 /* AutoISATAP-Prefix.pch */,
+				DA70E10A194C386B00540D41 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DA70E11F194C386C00540D41 /* AutoISATAPTests */ = {
+			isa = PBXGroup;
+			children = (
+				DA70E125194C386C00540D41 /* AutoISATAPTests.m */,
+				DA70E120194C386C00540D41 /* Supporting Files */,
+			);
+			path = AutoISATAPTests;
+			sourceTree = "<group>";
+		};
+		DA70E120194C386C00540D41 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DA70E121194C386C00540D41 /* AutoISATAPTests-Info.plist */,
+				DA70E122194C386C00540D41 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA70E0F7194C386B00540D41 /* AutoISATAP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA70E129194C386C00540D41 /* Build configuration list for PBXNativeTarget "AutoISATAP" */;
+			buildPhases = (
+				DA70E0F4194C386B00540D41 /* Sources */,
+				DA70E0F5194C386B00540D41 /* Frameworks */,
+				DA70E0F6194C386B00540D41 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutoISATAP;
+			productName = AutoISATAP;
+			productReference = DA70E0F8194C386B00540D41 /* AutoISATAP.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DA70E118194C386C00540D41 /* AutoISATAPTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA70E12C194C386C00540D41 /* Build configuration list for PBXNativeTarget "AutoISATAPTests" */;
+			buildPhases = (
+				DA70E115194C386C00540D41 /* Sources */,
+				DA70E116194C386C00540D41 /* Frameworks */,
+				DA70E117194C386C00540D41 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA70E11E194C386C00540D41 /* PBXTargetDependency */,
+			);
+			name = AutoISATAPTests;
+			productName = AutoISATAPTests;
+			productReference = DA70E119194C386C00540D41 /* AutoISATAPTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA70E0F0194C386B00540D41 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = BlahGeek;
+				TargetAttributes = {
+					DA70E118194C386C00540D41 = {
+						TestTargetID = DA70E0F7194C386B00540D41;
+					};
+				};
+			};
+			buildConfigurationList = DA70E0F3194C386B00540D41 /* Build configuration list for PBXProject "AutoISATAP" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DA70E0EF194C386B00540D41;
+			productRefGroup = DA70E0F9194C386B00540D41 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA70E0F7194C386B00540D41 /* AutoISATAP */,
+				DA70E118194C386C00540D41 /* AutoISATAPTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA70E0F6194C386B00540D41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA70E106194C386B00540D41 /* InfoPlist.strings in Resources */,
+				DA70E114194C386B00540D41 /* Images.xcassets in Resources */,
+				DA70E10C194C386B00540D41 /* Credits.rtf in Resources */,
+				DA70E112194C386B00540D41 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA70E117194C386C00540D41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA70E124194C386C00540D41 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA70E0F4194C386B00540D41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA70E10F194C386B00540D41 /* AppDelegate.m in Sources */,
+				DA70E108194C386B00540D41 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA70E115194C386C00540D41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA70E126194C386C00540D41 /* AutoISATAPTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DA70E11E194C386C00540D41 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA70E0F7194C386B00540D41 /* AutoISATAP */;
+			targetProxy = DA70E11D194C386C00540D41 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DA70E104194C386B00540D41 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA70E105194C386B00540D41 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DA70E10A194C386B00540D41 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA70E10B194C386B00540D41 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		DA70E110194C386B00540D41 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA70E111194C386B00540D41 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		DA70E122194C386C00540D41 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA70E123194C386C00540D41 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DA70E127194C386C00540D41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DA70E128194C386C00540D41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DA70E12A194C386C00540D41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AutoISATAP/AutoISATAP-Prefix.pch";
+				INFOPLIST_FILE = "AutoISATAP/AutoISATAP-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DA70E12B194C386C00540D41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AutoISATAP/AutoISATAP-Prefix.pch";
+				INFOPLIST_FILE = "AutoISATAP/AutoISATAP-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DA70E12D194C386C00540D41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AutoISATAP.app/Contents/MacOS/AutoISATAP";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AutoISATAP/AutoISATAP-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "AutoISATAPTests/AutoISATAPTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		DA70E12E194C386C00540D41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AutoISATAP.app/Contents/MacOS/AutoISATAP";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AutoISATAP/AutoISATAP-Prefix.pch";
+				INFOPLIST_FILE = "AutoISATAPTests/AutoISATAPTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA70E0F3194C386B00540D41 /* Build configuration list for PBXProject "AutoISATAP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA70E127194C386C00540D41 /* Debug */,
+				DA70E128194C386C00540D41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA70E129194C386C00540D41 /* Build configuration list for PBXNativeTarget "AutoISATAP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA70E12A194C386C00540D41 /* Debug */,
+				DA70E12B194C386C00540D41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DA70E12C194C386C00540D41 /* Build configuration list for PBXNativeTarget "AutoISATAPTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA70E12D194C386C00540D41 /* Debug */,
+				DA70E12E194C386C00540D41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DA70E0F0194C386B00540D41 /* Project object */;
+}
