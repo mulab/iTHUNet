@@ -20,7 +20,7 @@
 		DA70E11B194C386C00540D41 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA70E11A194C386C00540D41 /* XCTest.framework */; };
 		DA70E11C194C386C00540D41 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA70E0FB194C386B00540D41 /* Cocoa.framework */; };
 		DA70E124194C386C00540D41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA70E122194C386C00540D41 /* InfoPlist.strings */; };
-		DA70E126194C386C00540D41 /* iTHUNetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA70E125194C386C00540D41 /* iTHUNetTests.m */; };
+		DA70E126194C386C00540D41 /* AutoISATAPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA70E125194C386C00540D41 /* AutoISATAPTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,25 +37,25 @@
 		DA60FFDC194DBBF200BAC48F /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
 		DA60FFDD194DBBF200BAC48F /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
 		DA60FFDE194DBBF200BAC48F /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
-		DA70E0F8194C386B00540D41 /* iTHUNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTHUNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA70E0F8194C386B00540D41 /* AutoISATAP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoISATAP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA70E0FB194C386B00540D41 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		DA70E0FE194C386B00540D41 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		DA70E0FF194C386B00540D41 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DA70E100194C386B00540D41 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		DA70E103194C386B00540D41 /* iTHUNet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iTHUNet-Info.plist"; sourceTree = "<group>"; };
+		DA70E103194C386B00540D41 /* AutoISATAP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AutoISATAP-Info.plist"; sourceTree = "<group>"; };
 		DA70E105194C386B00540D41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DA70E107194C386B00540D41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DA70E109194C386B00540D41 /* iTHUNet-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iTHUNet-Prefix.pch"; sourceTree = "<group>"; };
+		DA70E109194C386B00540D41 /* AutoISATAP-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AutoISATAP-Prefix.pch"; sourceTree = "<group>"; };
 		DA70E10B194C386B00540D41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		DA70E10D194C386B00540D41 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DA70E10E194C386B00540D41 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DA70E111194C386B00540D41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		DA70E113194C386B00540D41 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		DA70E119194C386C00540D41 /* iTHUNetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTHUNetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA70E119194C386C00540D41 /* AutoISATAPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoISATAPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA70E11A194C386C00540D41 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		DA70E121194C386C00540D41 /* iTHUNetTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iTHUNetTests-Info.plist"; sourceTree = "<group>"; };
+		DA70E121194C386C00540D41 /* AutoISATAPTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AutoISATAPTests-Info.plist"; sourceTree = "<group>"; };
 		DA70E123194C386C00540D41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DA70E125194C386C00540D41 /* iTHUNetTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTHUNetTests.m; sourceTree = "<group>"; };
+		DA70E125194C386C00540D41 /* AutoISATAPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoISATAPTests.m; sourceTree = "<group>"; };
 		DA70E136194C6C3F00540D41 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		DB822B19610F45938B707491 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		FBAE248EF4E646BEB26733DF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,8 +86,8 @@
 		DA70E0EF194C386B00540D41 = {
 			isa = PBXGroup;
 			children = (
-				DA70E101194C386B00540D41 /* iTHUNet */,
-				DA70E11F194C386C00540D41 /* iTHUNetTests */,
+				DA70E101194C386B00540D41 /* AutoISATAP */,
+				DA70E11F194C386C00540D41 /* AutoISATAPTests */,
 				DA70E0FA194C386B00540D41 /* Frameworks */,
 				DA70E0F9194C386B00540D41 /* Products */,
 				DB822B19610F45938B707491 /* Pods.xcconfig */,
@@ -97,8 +97,8 @@
 		DA70E0F9194C386B00540D41 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DA70E0F8194C386B00540D41 /* iTHUNet.app */,
-				DA70E119194C386C00540D41 /* iTHUNetTests.xctest */,
+				DA70E0F8194C386B00540D41 /* AutoISATAP.app */,
+				DA70E119194C386C00540D41 /* AutoISATAPTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,7 +125,7 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		DA70E101194C386B00540D41 /* iTHUNet */ = {
+		DA70E101194C386B00540D41 /* AutoISATAP */ = {
 			isa = PBXGroup;
 			children = (
 				DA70E10D194C386B00540D41 /* AppDelegate.h */,
@@ -137,36 +137,34 @@
 				DA70E113194C386B00540D41 /* Images.xcassets */,
 				DA70E102194C386B00540D41 /* Supporting Files */,
 			);
-			name = iTHUNet;
 			path = AutoISATAP;
 			sourceTree = "<group>";
 		};
 		DA70E102194C386B00540D41 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DA70E103194C386B00540D41 /* iTHUNet-Info.plist */,
+				DA70E103194C386B00540D41 /* AutoISATAP-Info.plist */,
 				DA70E104194C386B00540D41 /* InfoPlist.strings */,
 				DA70E107194C386B00540D41 /* main.m */,
-				DA70E109194C386B00540D41 /* iTHUNet-Prefix.pch */,
+				DA70E109194C386B00540D41 /* AutoISATAP-Prefix.pch */,
 				DA70E10A194C386B00540D41 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DA70E11F194C386C00540D41 /* iTHUNetTests */ = {
+		DA70E11F194C386C00540D41 /* AutoISATAPTests */ = {
 			isa = PBXGroup;
 			children = (
-				DA70E125194C386C00540D41 /* iTHUNetTests.m */,
+				DA70E125194C386C00540D41 /* AutoISATAPTests.m */,
 				DA70E120194C386C00540D41 /* Supporting Files */,
 			);
-			name = iTHUNetTests;
 			path = AutoISATAPTests;
 			sourceTree = "<group>";
 		};
 		DA70E120194C386C00540D41 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DA70E121194C386C00540D41 /* iTHUNetTests-Info.plist */,
+				DA70E121194C386C00540D41 /* AutoISATAPTests-Info.plist */,
 				DA70E122194C386C00540D41 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -175,9 +173,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DA70E0F7194C386B00540D41 /* iTHUNet */ = {
+		DA70E0F7194C386B00540D41 /* AutoISATAP */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DA70E129194C386C00540D41 /* Build configuration list for PBXNativeTarget "iTHUNet" */;
+			buildConfigurationList = DA70E129194C386C00540D41 /* Build configuration list for PBXNativeTarget "AutoISATAP" */;
 			buildPhases = (
 				057052B1F6674F76883AD848 /* Check Pods Manifest.lock */,
 				DA70E0F4194C386B00540D41 /* Sources */,
@@ -189,14 +187,14 @@
 			);
 			dependencies = (
 			);
-			name = iTHUNet;
+			name = AutoISATAP;
 			productName = AutoISATAP;
-			productReference = DA70E0F8194C386B00540D41 /* iTHUNet.app */;
+			productReference = DA70E0F8194C386B00540D41 /* AutoISATAP.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DA70E118194C386C00540D41 /* iTHUNetTests */ = {
+		DA70E118194C386C00540D41 /* AutoISATAPTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DA70E12C194C386C00540D41 /* Build configuration list for PBXNativeTarget "iTHUNetTests" */;
+			buildConfigurationList = DA70E12C194C386C00540D41 /* Build configuration list for PBXNativeTarget "AutoISATAPTests" */;
 			buildPhases = (
 				DA70E115194C386C00540D41 /* Sources */,
 				DA70E116194C386C00540D41 /* Frameworks */,
@@ -207,9 +205,9 @@
 			dependencies = (
 				DA70E11E194C386C00540D41 /* PBXTargetDependency */,
 			);
-			name = iTHUNetTests;
+			name = AutoISATAPTests;
 			productName = AutoISATAPTests;
-			productReference = DA70E119194C386C00540D41 /* iTHUNetTests.xctest */;
+			productReference = DA70E119194C386C00540D41 /* AutoISATAPTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -239,8 +237,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DA70E0F7194C386B00540D41 /* iTHUNet */,
-				DA70E118194C386C00540D41 /* iTHUNetTests */,
+				DA70E0F7194C386B00540D41 /* AutoISATAP */,
+				DA70E118194C386C00540D41 /* AutoISATAPTests */,
 			);
 		};
 /* End PBXProject section */
@@ -316,7 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA70E126194C386C00540D41 /* iTHUNetTests.m in Sources */,
+				DA70E126194C386C00540D41 /* AutoISATAPTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +323,7 @@
 /* Begin PBXTargetDependency section */
 		DA70E11E194C386C00540D41 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DA70E0F7194C386B00540D41 /* iTHUNet */;
+			target = DA70E0F7194C386B00540D41 /* AutoISATAP */;
 			targetProxy = DA70E11D194C386C00540D41 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -443,9 +441,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AutoISATAP/iTHUNet-Prefix.pch";
-				INFOPLIST_FILE = "AutoISATAP/iTHUNet-Info.plist";
-				PRODUCT_NAME = iTHUNet;
+				GCC_PREFIX_HEADER = "AutoISATAP/AutoISATAP-Prefix.pch";
+				INFOPLIST_FILE = "AutoISATAP/AutoISATAP-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -457,9 +455,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AutoISATAP/iTHUNet-Prefix.pch";
-				INFOPLIST_FILE = "AutoISATAP/iTHUNet-Info.plist";
-				PRODUCT_NAME = iTHUNet;
+				GCC_PREFIX_HEADER = "AutoISATAP/AutoISATAP-Prefix.pch";
+				INFOPLIST_FILE = "AutoISATAP/AutoISATAP-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -479,8 +477,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "AutoISATAPTests/iTHUNetTests-Info.plist";
-				PRODUCT_NAME = iTHUNetTests;
+				INFOPLIST_FILE = "AutoISATAPTests/AutoISATAPTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -497,8 +495,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AutoISATAP/AutoISATAP-Prefix.pch";
-				INFOPLIST_FILE = "AutoISATAPTests/iTHUNetTests-Info.plist";
-				PRODUCT_NAME = iTHUNetTests;
+				INFOPLIST_FILE = "AutoISATAPTests/AutoISATAPTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -516,7 +514,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DA70E129194C386C00540D41 /* Build configuration list for PBXNativeTarget "iTHUNet" */ = {
+		DA70E129194C386C00540D41 /* Build configuration list for PBXNativeTarget "AutoISATAP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA70E12A194C386C00540D41 /* Debug */,
@@ -525,7 +523,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DA70E12C194C386C00540D41 /* Build configuration list for PBXNativeTarget "iTHUNetTests" */ = {
+		DA70E12C194C386C00540D41 /* Build configuration list for PBXNativeTarget "AutoISATAPTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA70E12D194C386C00540D41 /* Debug */,
