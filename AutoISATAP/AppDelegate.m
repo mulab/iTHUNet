@@ -32,6 +32,8 @@
                 break;
         }
     }];
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"textField": @"42"}];
 }
 
 - (void) awakeFromNib {
@@ -43,9 +45,8 @@
 
 - (IBAction)itemClickFrom:(NSMenuItem *)sender {
     NSLog(@"Click from %@", sender);
-    NSUserDefaults * defaults = [NSUserDefaultsController sharedUserDefaultsController];
-    NSLog(@"%@", [defaults valueForKey:@"values"]);
-    NSLog(@"%@", [defaults valueForKeyPath:@"values.textField"]);
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    NSLog(@"%@", [defaults stringForKey:@"textField"]);
 }
 
 - (IBAction)toggleAutoSetup:(NSMenuItem *)sender {
