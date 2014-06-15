@@ -8,14 +8,18 @@
 
 #import <Cocoa/Cocoa.h>
 #import "GCNetworkReachability.h"
+#import "Preferences.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
-    GCNetworkReachability * reach;
+    GCNetworkReachability * reachv4;
+    GCNetworkReachability * reachv6;
 }
 
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSMenu *statusMenu;
 @property (strong, nonatomic) NSStatusItem *statusBar;
+
+- (IBAction)itemClickFrom:(NSMenuItem *)sender;
 
 - (IBAction)toggleAutoSetup:(NSMenuItem *)sender;
 

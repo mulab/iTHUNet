@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>AutoISATAPHelper.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,16 @@
 			<true/>
 		</dict>
 		<key>DA70E118194C386C00540D41</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DA70E134194C6C3F00540D41</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DA70E143194C6C9900540D41</key>
 		<dict>
 			<key>primary</key>
 			<true/>

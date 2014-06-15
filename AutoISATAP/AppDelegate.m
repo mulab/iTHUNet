@@ -13,8 +13,9 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    self->reach = [GCNetworkReachability reachabilityWithIPv6AddressString:@"2001:4860:4860::8888"];
-    [self->reach startMonitoringNetworkReachabilityWithHandler:^(GCNetworkReachabilityStatus status) {
+    self->reachv4 = [GCNetworkReachability reachabilityWithInternetAddressString:@"166.111.8.28"];
+    self->reachv6 = [GCNetworkReachability reachabilityWithIPv6AddressString:@"2001:4860:4860::8888"];
+    [self->reachv4 startMonitoringNetworkReachabilityWithHandler:^(GCNetworkReachabilityStatus status) {
         switch (status) {
             case GCNetworkReachabilityStatusNotReachable:
                 NSLog(@"Not reachable!");
@@ -38,6 +39,13 @@
     self.statusBar.title = @"ISATAP";
     self.statusBar.menu = self.statusMenu;
     self.statusBar.highlightMode = YES;
+}
+
+- (IBAction)itemClickFrom:(NSMenuItem *)sender {
+    NSLog(@"Click from %@", sender);
+    NSUserDefaults * defaults = [NSUserDefaultsController sharedUserDefaultsController];
+    NSLog(@"%@", [defaults valueForKey:@"values"]);
+    NSLog(@"%@", [defaults valueForKeyPath:@"values.textField"]);
 }
 
 - (IBAction)toggleAutoSetup:(NSMenuItem *)sender {
