@@ -9,14 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>AutoISATAPHelper.xcscheme</key>
+		<key>TunetISATAPHelper.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>7</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>DA60FFF2194F120300BAC48F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>DA70E0F7194C386B00540D41</key>
 		<dict>
 			<key>primary</key>

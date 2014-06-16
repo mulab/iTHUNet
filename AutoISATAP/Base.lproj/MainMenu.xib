@@ -676,6 +676,12 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="HJP-wf-McE"/>
+                <menuItem title="Test Item" id="xwT-kE-Oh0">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="itemClickFrom:" target="Voe-Tx-rLC" id="LfU-lu-KKg"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Login Now" id="cXp-iw-ErH">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

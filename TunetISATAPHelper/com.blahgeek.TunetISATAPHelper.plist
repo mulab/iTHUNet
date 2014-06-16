@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Sockets</key>
+	<dict>
+		<key>Listener</key>
+		<dict>
+			<key>SockPathMode</key>
+			<integer>438</integer>
+			<key>SockPathName</key>
+			<string>/var/run/TunetISATAPHelper.socket</string>
+		</dict>
+	</dict>
+	<key>ServiceIPC</key>
+	<true/>
+	<key>StandardErrorPath</key>
+	<string>/var/log/com.blahgeek.isatap.err.log</string>
+	<key>StandardOutPath</key>
+	<string>/var/log/com.blahgeek.isatap.log</string>
+	<key>Label</key>
+	<string>blahgeek.TunetISATAPHelper</string>
+</dict>
+</plist>

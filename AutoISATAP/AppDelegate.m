@@ -11,6 +11,11 @@
 #import "PDKeychainBindings.h"
 #import "TunetNetworkUtils.h"
 
+#import <Security/Security.h>
+#import <ServiceManagement/ServiceManagement.h>
+#import <sys/socket.h>
+#import <sys/un.h>
+
 
 static NSDictionary * defaultValues() {
     static NSDictionary * values = nil;
@@ -53,6 +58,42 @@ static NSDictionary * defaultValues() {
         }
     }];
     
+    CFStringRef jobLabel = CFSTR("blahgeek.TunetISATAPHelper");
+    CFDictionaryRef helperJob = SMJobCopyDictionary(kSMDomainSystemLaunchd, jobLabel);
+    if(helperJob){
+        NSLog(@"Helper job already exists");
+        CFRelease(helperJob);
+    } else {
+        AuthorizationItem authItem = {
+            .name = kSMRightBlessPrivilegedHelper,
+            .valueLength = 0,
+            .value = NULL,
+            .flags = kAuthorizationFlagDefaults };
+        
+        AuthorizationRights authRights	= { .count = 1,
+            .items = &authItem };
+        
+        AuthorizationRef authorization = NULL;
+        OSStatus authResult = AuthorizationCreate(&authRights,
+                                                  kAuthorizationEmptyEnvironment,
+                                                  kAuthorizationFlagDefaults | kAuthorizationFlagInteractionAllowed |
+                                                  kAuthorizationFlagPreAuthorize | kAuthorizationFlagExtendRights,
+                                                  &authorization);
+        if (authResult != errAuthorizationSuccess) {
+            NSLog(@"couldn't create AuthorizationRef: error %i", authResult);
+        } else {
+            // got authorization, so deploy the helper
+            CFErrorRef error = NULL;
+            BOOL blessResult = SMJobBless(kSMDomainSystemLaunchd, jobLabel, authorization, &error);
+            AuthorizationFree(authorization, kAuthorizationFlagDefaults);
+            if (!blessResult) {
+                CFStringRef errorString = CFErrorCopyDescription(error);
+                NSLog(@"couldn't install privileged helper: %@", (__bridge id)errorString);
+                CFRelease(errorString);
+            }
+        }
+    }
+    
 }
 
 - (void) awakeFromNib {
@@ -63,10 +104,42 @@ static NSDictionary * defaultValues() {
 }
 
 - (IBAction)itemClickFrom:(NSMenuItem *)sender {
+    NSString * command = @"/usr/bin/touch /42.txt";
     NSLog(@"Click from %@", sender);
-    NSString * password = [[PDKeychainBindings sharedKeychainBindings] stringForKey:@"loginPassword"];
-    NSString * username = [[NSUserDefaults standardUserDefaults] stringForKey:@"loginUsername"];
-    NSLog(@"Username: %@, Password: %@", username, password);
+    int socket_descriptor = socket(PF_LOCAL, SOCK_STREAM, 0);
+    if (socket_descriptor == -1) {
+        NSLog(@"error creating socket: %s", strerror(errno));
+        return;
+    }
+    struct sockaddr_un address = {
+        .sun_family = PF_LOCAL,
+        .sun_path = "/var/run/TunetISATAPHelper.socket",
+    };
+    if (connect(socket_descriptor, (const struct sockaddr *)&address, sizeof(address)) != 0) {
+        NSLog(@"error connecting to socket: %s", strerror(errno));
+        goto done;
+    }
+    //send the command
+    size_t bytes_written = send(socket_descriptor,
+                                [command cStringUsingEncoding:NSUTF8StringEncoding],
+                                [command length], 0);
+    if (bytes_written != [command length]) {
+        NSLog(@"couldn't write to socket: %s", strerror(errno));
+        goto done;
+    }
+    size_t bytes_read = 0;
+    char *buffer = malloc(4096);
+    while((bytes_read = recv(socket_descriptor, buffer, 4096, 0)) > 0) {
+        NSString *logContent =
+        [[NSString alloc] initWithBytes: buffer length: bytes_read encoding: NSUTF8StringEncoding];
+        NSLog(@"%@", logContent);
+    }
+    
+    free(buffer);
+done:
+    if (socket_descriptor != -1) {
+        close(socket_descriptor);
+    }
 }
 
 @end

@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		4EAAB60954394EE19E108D5A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAE248EF4E646BEB26733DF /* libPods.a */; };
+		DA600001194F26DD00BAC48F /* blahgeek.TunetISATAPHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA60FFF3194F120300BAC48F /* blahgeek.TunetISATAPHelper */; };
 		DA60FFDF194DBBF200BAC48F /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFDD194DBBF200BAC48F /* Preferences.m */; };
 		DA60FFE0194DBBF200BAC48F /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA60FFDE194DBBF200BAC48F /* Preferences.xib */; };
 		DA60FFE6194E83E000BAC48F /* PDKeychainBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFE3194E83E000BAC48F /* PDKeychainBindings.m */; };
 		DA60FFE7194E83E000BAC48F /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFE5194E83E000BAC48F /* PDKeychainBindingsController.m */; };
 		DA60FFEB194E904F00BAC48F /* TunetLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFEA194E904E00BAC48F /* TunetLogin.m */; };
 		DA60FFEE194EB0D800BAC48F /* TunetNetworkUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFED194EB0D800BAC48F /* TunetNetworkUtils.m */; };
+		DA60FFF6194F120300BAC48F /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFF5194F120300BAC48F /* main.c */; };
+		DA60FFFD194F1A6B00BAC48F /* com.blahgeek.TunetISATAPHelper.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA60FFFC194F172800BAC48F /* com.blahgeek.TunetISATAPHelper.plist */; };
 		DA70E0FC194C386B00540D41 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA70E0FB194C386B00540D41 /* Cocoa.framework */; };
 		DA70E106194C386B00540D41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA70E104194C386B00540D41 /* InfoPlist.strings */; };
 		DA70E108194C386B00540D41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA70E107194C386B00540D41 /* main.m */; };
@@ -37,6 +40,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DA60FFF1194F120300BAC48F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /Library/LaunchDaemons;
+			dstSubfolderSpec = 0;
+			files = (
+				DA60FFFD194F1A6B00BAC48F /* com.blahgeek.TunetISATAPHelper.plist in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		DA60FFFF194F1E9500BAC48F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LaunchServices;
+			dstSubfolderSpec = 1;
+			files = (
+				DA600001194F26DD00BAC48F /* blahgeek.TunetISATAPHelper in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		DA60FFDC194DBBF200BAC48F /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
 		DA60FFDD194DBBF200BAC48F /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
@@ -49,6 +75,11 @@
 		DA60FFEA194E904E00BAC48F /* TunetLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TunetLogin.m; sourceTree = "<group>"; };
 		DA60FFEC194EB0D800BAC48F /* TunetNetworkUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TunetNetworkUtils.h; sourceTree = "<group>"; };
 		DA60FFED194EB0D800BAC48F /* TunetNetworkUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TunetNetworkUtils.m; sourceTree = "<group>"; };
+		DA60FFF3194F120300BAC48F /* blahgeek.TunetISATAPHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = blahgeek.TunetISATAPHelper; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA60FFF5194F120300BAC48F /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		DA60FFF7194F120300BAC48F /* TunetISATAPHelper.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = TunetISATAPHelper.1; sourceTree = "<group>"; };
+		DA60FFFC194F172800BAC48F /* com.blahgeek.TunetISATAPHelper.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = com.blahgeek.TunetISATAPHelper.plist; sourceTree = "<group>"; };
+		DA60FFFE194F1BF200BAC48F /* TunetISATAPHelper-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TunetISATAPHelper-Info.plist"; sourceTree = "<group>"; };
 		DA70E0F8194C386B00540D41 /* AutoISATAP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoISATAP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA70E0FB194C386B00540D41 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		DA70E0FE194C386B00540D41 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -74,6 +105,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DA60FFF0194F120300BAC48F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DA70E0F5194C386B00540D41 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -106,11 +144,23 @@
 			name = PDKeychainBindings;
 			sourceTree = "<group>";
 		};
+		DA60FFF4194F120300BAC48F /* TunetISATAPHelper */ = {
+			isa = PBXGroup;
+			children = (
+				DA60FFF5194F120300BAC48F /* main.c */,
+				DA60FFF7194F120300BAC48F /* TunetISATAPHelper.1 */,
+				DA60FFFC194F172800BAC48F /* com.blahgeek.TunetISATAPHelper.plist */,
+				DA60FFFE194F1BF200BAC48F /* TunetISATAPHelper-Info.plist */,
+			);
+			path = TunetISATAPHelper;
+			sourceTree = "<group>";
+		};
 		DA70E0EF194C386B00540D41 = {
 			isa = PBXGroup;
 			children = (
 				DA70E101194C386B00540D41 /* AutoISATAP */,
 				DA70E11F194C386C00540D41 /* AutoISATAPTests */,
+				DA60FFF4194F120300BAC48F /* TunetISATAPHelper */,
 				DA70E0FA194C386B00540D41 /* Frameworks */,
 				DA70E0F9194C386B00540D41 /* Products */,
 				DB822B19610F45938B707491 /* Pods.xcconfig */,
@@ -122,6 +172,7 @@
 			children = (
 				DA70E0F8194C386B00540D41 /* AutoISATAP.app */,
 				DA70E119194C386C00540D41 /* AutoISATAPTests.xctest */,
+				DA60FFF3194F120300BAC48F /* blahgeek.TunetISATAPHelper */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,11 +202,11 @@
 		DA70E101194C386B00540D41 /* AutoISATAP */ = {
 			isa = PBXGroup;
 			children = (
-				DA60FFE9194E904E00BAC48F /* TunetLogin.h */,
+				DA60FFE8194E83E800BAC48F /* PDKeychainBindings */,
 				DA60FFEC194EB0D800BAC48F /* TunetNetworkUtils.h */,
 				DA60FFED194EB0D800BAC48F /* TunetNetworkUtils.m */,
+				DA60FFE9194E904E00BAC48F /* TunetLogin.h */,
 				DA60FFEA194E904E00BAC48F /* TunetLogin.m */,
-				DA60FFE8194E83E800BAC48F /* PDKeychainBindings */,
 				DA70E10D194C386B00540D41 /* AppDelegate.h */,
 				DA70E10E194C386B00540D41 /* AppDelegate.m */,
 				DA70E110194C386B00540D41 /* MainMenu.xib */,
@@ -201,6 +252,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DA60FFF2194F120300BAC48F /* TunetISATAPHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA60FFF9194F120300BAC48F /* Build configuration list for PBXNativeTarget "TunetISATAPHelper" */;
+			buildPhases = (
+				DA60FFEF194F120300BAC48F /* Sources */,
+				DA60FFF0194F120300BAC48F /* Frameworks */,
+				DA60FFF1194F120300BAC48F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TunetISATAPHelper;
+			productName = TunetISATAPHelper;
+			productReference = DA60FFF3194F120300BAC48F /* blahgeek.TunetISATAPHelper */;
+			productType = "com.apple.product-type.tool";
+		};
 		DA70E0F7194C386B00540D41 /* AutoISATAP */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA70E129194C386C00540D41 /* Build configuration list for PBXNativeTarget "AutoISATAP" */;
@@ -210,6 +278,7 @@
 				DA70E0F5194C386B00540D41 /* Frameworks */,
 				DA70E0F6194C386B00540D41 /* Resources */,
 				A5298E7523A642929D5C494E /* Copy Pods Resources */,
+				DA60FFFF194F1E9500BAC48F /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -267,6 +336,7 @@
 			targets = (
 				DA70E0F7194C386B00540D41 /* AutoISATAP */,
 				DA70E118194C386C00540D41 /* AutoISATAPTests */,
+				DA60FFF2194F120300BAC48F /* TunetISATAPHelper */,
 			);
 		};
 /* End PBXProject section */
@@ -328,6 +398,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DA60FFEF194F120300BAC48F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA60FFF6194F120300BAC48F /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DA70E0F4194C386B00540D41 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -396,6 +474,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DA60FFFA194F120300BAC48F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "BlahGeek's Self-Signed App";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					"TunetISATAPHelper/TunetISATAPHelper-Info.plist",
+					"-sectcreate",
+					__TEXT,
+					__launchd_plist,
+					TunetISATAPHelper/com.blahgeek.TunetISATAPHelper.plist,
+				);
+				PRODUCT_NAME = "blahgeek.$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DA60FFFB194F120300BAC48F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "BlahGeek's Self-Signed App";
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					"TunetISATAPHelper/TunetISATAPHelper-Info.plist",
+					"-sectcreate",
+					__TEXT,
+					__launchd_plist,
+					TunetISATAPHelper/com.blahgeek.TunetISATAPHelper.plist,
+				);
+				PRODUCT_NAME = "blahgeek.$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		DA70E127194C386C00540D41 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -471,6 +589,7 @@
 			baseConfigurationReference = DB822B19610F45938B707491 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "BlahGeek's Self-Signed App";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AutoISATAP/AutoISATAP-Prefix.pch";
@@ -485,6 +604,7 @@
 			baseConfigurationReference = DB822B19610F45938B707491 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "BlahGeek's Self-Signed App";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AutoISATAP/AutoISATAP-Prefix.pch";
@@ -537,6 +657,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DA60FFF9194F120300BAC48F /* Build configuration list for PBXNativeTarget "TunetISATAPHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA60FFFA194F120300BAC48F /* Debug */,
+				DA60FFFB194F120300BAC48F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		DA70E0F3194C386B00540D41 /* Build configuration list for PBXProject "iTHUNet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
