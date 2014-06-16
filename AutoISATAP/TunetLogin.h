@@ -29,7 +29,6 @@ typedef enum {
 @property (weak) IBOutlet NSMenuItem *loginStatusMenuItem;
 @property (weak) IBOutlet NSMenuItem *isatapStatusMenuItem;
 
-- (id)init;
 - (void)reset;
 
 - (void)updateMenuItem;

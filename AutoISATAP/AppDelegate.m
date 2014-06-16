@@ -11,10 +11,28 @@
 #import "PDKeychainBindings.h"
 #import "TunetNetworkUtils.h"
 
+
+static NSDictionary * defaultValues() {
+    static NSDictionary * values = nil;
+    if (values != nil) return values;
+    values = @{@"enableAutoLogin": @YES,
+               @"enableAutoISATAP": @YES,
+               @"showNotification": @YES,
+               @"sendStatistic": @YES,
+               @"enabledISATAPNetworks": @[@{@"network": @"59.66.0.0", @"prefixlen": @"16"},
+                                           @{@"network": @"166.111.0.0", @"prefixlen": @"16"},
+                                           @{@"network": @"101.5.0.0", @"prefixlen": @"16"}],
+               };
+    return values;
+}
+
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues()];
+    [[NSUserDefaultsController sharedUserDefaultsController] setInitialValues:defaultValues()];
+    
     self->reachv4 = [GCNetworkReachability reachabilityWithInternetAddressString:@"166.111.8.28"];
     self->reachv6 = [GCNetworkReachability reachabilityWithIPv6AddressString:@"2001:4860:4860::8888"];
     [self->reachv4 startMonitoringNetworkReachabilityWithHandler:^(GCNetworkReachabilityStatus status) {
