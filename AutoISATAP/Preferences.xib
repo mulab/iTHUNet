@@ -6,6 +6,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="Preferences">
             <connections>
+                <outlet property="passwordField" destination="pbk-6K-34I" id="5MA-9k-RJy"/>
+                <outlet property="shownPasswordField" destination="lyO-VG-sQo" id="Qhp-yE-dzi"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="Ehr-gg-QTX"/>
             </connections>
         </customObject>
@@ -50,23 +52,29 @@
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="Login" identifier="2" id="hPZ-pH-Ue1">
-                                <view key="view" id="MXC-qq-6Nr">
+                                <view key="view" ambiguous="YES" id="MXC-qq-6Nr">
                                     <rect key="frame" x="10" y="33" width="227" height="233"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eLb-jv-OmC">
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eLb-jv-OmC" userLabel="username">
                                             <rect key="frame" x="91" y="157" width="112" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="zhangting12" drawsBackground="YES" id="IJ0-nb-mDY">
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="zhangting12" id="IJ0-nb-mDY">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="Vy8-6U-RfR" name="value" keyPath="values.loginUsername" id="afH-Eq-NT7"/>
+                                                <binding destination="Vy8-6U-RfR" name="value" keyPath="values.loginUsername" id="aBC-Vx-Kaj">
+                                                    <dictionary key="options">
+                                                        <string key="NSNoSelectionPlaceholder">zhangting12</string>
+                                                        <string key="NSNotApplicablePlaceholder">zhangting12</string>
+                                                        <string key="NSNullPlaceholder">zhangting12</string>
+                                                    </dictionary>
+                                                </binding>
                                             </connections>
                                         </textField>
-                                        <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pbk-6K-34I">
+                                        <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pbk-6K-34I" userLabel="password">
                                             <rect key="frame" x="91" y="129" width="112" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="19950507" drawsBackground="YES" usesSingleLineMode="YES" id="aaw-Mt-sUS">
@@ -77,10 +85,16 @@
                                                     <string>NSAllRomanInputSourcesLocaleIdentifier</string>
                                                 </allowedInputSourceLocales>
                                             </secureTextFieldCell>
-                                            <connections>
-                                                <binding destination="Vy8-6U-RfR" name="value" keyPath="values.loginPassword" id="HSL-Q7-Ofv"/>
-                                            </connections>
                                         </secureTextField>
+                                        <textField hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lyO-VG-sQo" userLabel="shownPassword">
+                                            <rect key="frame" x="91" y="129" width="112" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="0Bo-Ya-YQY">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VN5-qC-byS">
                                             <rect key="frame" x="20" y="159" width="72" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -110,11 +124,22 @@
                                                 <binding destination="Vy8-6U-RfR" name="value" keyPath="values.enableAutoLogin" id="xkx-w8-XAV"/>
                                             </connections>
                                         </button>
+                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3c2-5w-cLz">
+                                            <rect key="frame" x="20" y="97" width="154" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Show Password" bezelStyle="regularSquare" imagePosition="left" inset="2" id="s98-1B-cLj">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="togglePasswordShowing:" target="-2" id="hka-Bb-SVd"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="IPv6" identifier="" id="zvD-Qi-VI9">
-                                <view key="view" ambiguous="YES" id="5rS-YL-TsE">
+                                <view key="view" id="5rS-YL-TsE">
                                     <rect key="frame" x="10" y="33" width="227" height="233"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>

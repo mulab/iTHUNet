@@ -10,6 +10,8 @@
 		4EAAB60954394EE19E108D5A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAE248EF4E646BEB26733DF /* libPods.a */; };
 		DA60FFDF194DBBF200BAC48F /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFDD194DBBF200BAC48F /* Preferences.m */; };
 		DA60FFE0194DBBF200BAC48F /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA60FFDE194DBBF200BAC48F /* Preferences.xib */; };
+		DA60FFE6194E83E000BAC48F /* PDKeychainBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFE3194E83E000BAC48F /* PDKeychainBindings.m */; };
+		DA60FFE7194E83E000BAC48F /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFE5194E83E000BAC48F /* PDKeychainBindingsController.m */; };
 		DA70E0FC194C386B00540D41 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA70E0FB194C386B00540D41 /* Cocoa.framework */; };
 		DA70E106194C386B00540D41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA70E104194C386B00540D41 /* InfoPlist.strings */; };
 		DA70E108194C386B00540D41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA70E107194C386B00540D41 /* main.m */; };
@@ -37,6 +39,10 @@
 		DA60FFDC194DBBF200BAC48F /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
 		DA60FFDD194DBBF200BAC48F /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
 		DA60FFDE194DBBF200BAC48F /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
+		DA60FFE2194E83E000BAC48F /* PDKeychainBindings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindings.h; sourceTree = "<group>"; };
+		DA60FFE3194E83E000BAC48F /* PDKeychainBindings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindings.m; sourceTree = "<group>"; };
+		DA60FFE4194E83E000BAC48F /* PDKeychainBindingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindingsController.h; sourceTree = "<group>"; };
+		DA60FFE5194E83E000BAC48F /* PDKeychainBindingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindingsController.m; sourceTree = "<group>"; };
 		DA70E0F8194C386B00540D41 /* AutoISATAP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoISATAP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA70E0FB194C386B00540D41 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		DA70E0FE194C386B00540D41 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -83,6 +89,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA60FFE8194E83E800BAC48F /* PDKeychainBindings */ = {
+			isa = PBXGroup;
+			children = (
+				DA60FFE5194E83E000BAC48F /* PDKeychainBindingsController.m */,
+				DA60FFE2194E83E000BAC48F /* PDKeychainBindings.h */,
+				DA60FFE3194E83E000BAC48F /* PDKeychainBindings.m */,
+				DA60FFE4194E83E000BAC48F /* PDKeychainBindingsController.h */,
+			);
+			name = PDKeychainBindings;
+			sourceTree = "<group>";
+		};
 		DA70E0EF194C386B00540D41 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +145,7 @@
 		DA70E101194C386B00540D41 /* AutoISATAP */ = {
 			isa = PBXGroup;
 			children = (
+				DA60FFE8194E83E800BAC48F /* PDKeychainBindings */,
 				DA70E10D194C386B00540D41 /* AppDelegate.h */,
 				DA70E10E194C386B00540D41 /* AppDelegate.m */,
 				DA70E110194C386B00540D41 /* MainMenu.xib */,
@@ -305,7 +323,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA70E10F194C386B00540D41 /* AppDelegate.m in Sources */,
+				DA60FFE6194E83E000BAC48F /* PDKeychainBindings.m in Sources */,
 				DA70E108194C386B00540D41 /* main.m in Sources */,
+				DA60FFE7194E83E000BAC48F /* PDKeychainBindingsController.m in Sources */,
 				DA60FFDF194DBBF200BAC48F /* Preferences.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

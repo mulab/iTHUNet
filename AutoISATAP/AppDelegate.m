@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "GCNetworkReachability.h"
+#import "PDKeychainBindings.h"
 
 @implementation AppDelegate
 
@@ -45,8 +46,8 @@
 
 - (IBAction)itemClickFrom:(NSMenuItem *)sender {
     NSLog(@"Click from %@", sender);
-    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-    NSLog(@"%@", [defaults stringForKey:@"textField"]);
+    PDKeychainBindings * bindings = [PDKeychainBindings sharedKeychainBindings];
+    NSLog(@"%@", [bindings stringForKey:@"password"]);
 }
 
 - (IBAction)toggleAutoSetup:(NSMenuItem *)sender {

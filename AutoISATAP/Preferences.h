@@ -7,7 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "PDKeychainBindingsController.h"
 
-@interface Preferences : NSWindowController
+@interface Preferences : NSWindowController {
+    BOOL showingPassword;
+}
+
+@property (weak) IBOutlet NSSecureTextField *passwordField;
+@property (weak) IBOutlet NSTextField *shownPasswordField;
+- (IBAction)togglePasswordShowing:(NSButton *)sender;
 
 @end
