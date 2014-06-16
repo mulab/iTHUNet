@@ -20,16 +20,16 @@
 - (id)init {
     self = [super initWithWindowNibName:@"Preferences"];
     [self.window setLevel:NSMainMenuWindowLevel];
-    [self.passwordField bind:@"value"
-                    toObject:[PDKeychainBindingsController sharedKeychainBindingsController]
-                 withKeyPath:[NSString stringWithFormat:@"values.%@", @"password"]
-                     options:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES]
-                                                         forKey:@"NSContinuouslyUpdatesValue"]];
-    [self.shownPasswordField bind:@"value"
-                         toObject:[PDKeychainBindingsController sharedKeychainBindingsController]
-                      withKeyPath:[NSString stringWithFormat:@"values.%@", @"password"]
-                          options:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES]
-                                                              forKey:@"NSContinuouslyUpdatesValue"]];
+    
+    for(NSTextField * textField in [NSArray arrayWithObjects:self.passwordField,
+                                    self.shownPasswordField, nil]){
+        [textField bind:@"value"
+               toObject:[PDKeychainBindingsController sharedKeychainBindingsController]
+            withKeyPath:[NSString stringWithFormat:@"values.%@", @"password"]
+                options:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES]
+                                                    forKey:@"NSContinuouslyUpdatesValue"]];
+    }
+
     self->showingPassword = NO;
     return self;
 }
