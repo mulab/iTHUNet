@@ -25,7 +25,7 @@
                                     self.shownPasswordField, nil]){
         [textField bind:@"value"
                toObject:[PDKeychainBindingsController sharedKeychainBindingsController]
-            withKeyPath:[NSString stringWithFormat:@"values.%@", @"password"]
+            withKeyPath:[NSString stringWithFormat:@"values.%@", @"loginPassword"]
                 options:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES]
                                                     forKey:@"NSContinuouslyUpdatesValue"]];
     }

@@ -21,6 +21,5 @@
 
 - (IBAction)itemClickFrom:(NSMenuItem *)sender;
 
-- (IBAction)toggleAutoSetup:(NSMenuItem *)sender;
 
 @end

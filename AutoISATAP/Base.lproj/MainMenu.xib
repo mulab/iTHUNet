@@ -668,16 +668,10 @@
         </menu>
         <menu id="gyu-K5-GyU">
             <items>
-                <menuItem title="Item" id="cXp-iw-ErH">
+                <menuItem title="Login Now" id="cXp-iw-ErH">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="itemClickFrom:" target="Voe-Tx-rLC" id="iCW-h6-yaG"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Start at login" id="PH0-h5-E8f">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="toggleAutoSetup:" target="Voe-Tx-rLC" id="MKf-dC-LwN"/>
+                        <action selector="doLogin:" target="5oQ-38-SZq" id="f6k-Ci-QTp"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="ooL-bN-Pcx"/>
@@ -694,5 +688,6 @@
             </items>
         </menu>
         <customObject id="QL7-JF-3GD" customClass="Preferences"/>
+        <customObject id="5oQ-38-SZq" customClass="TunetLogin"/>
     </objects>
 </document>

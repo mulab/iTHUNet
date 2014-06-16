@@ -28,7 +28,7 @@
                         <font key="font" metaFont="system"/>
                         <tabViewItems>
                             <tabViewItem label="General" identifier="1" id="cA5-Pm-tIy">
-                                <view key="view" id="0ka-9N-ETg">
+                                <view key="view" ambiguous="YES" id="0ka-9N-ETg">
                                     <rect key="frame" x="10" y="33" width="227" height="233"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -48,11 +48,22 @@
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                         </button>
+                                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8eV-Pm-8Y6">
+                                            <rect key="frame" x="20" y="157" width="150" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Show Notification" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="yQU-Zw-I8c">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="Vy8-6U-RfR" name="value" keyPath="values.showNotification" id="1qh-hH-r6V"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="Login" identifier="2" id="hPZ-pH-Ue1">
-                                <view key="view" ambiguous="YES" id="MXC-qq-6Nr">
+                                <view key="view" id="MXC-qq-6Nr">
                                     <rect key="frame" x="10" y="33" width="227" height="233"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>

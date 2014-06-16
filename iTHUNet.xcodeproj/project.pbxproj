@@ -12,6 +12,8 @@
 		DA60FFE0194DBBF200BAC48F /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA60FFDE194DBBF200BAC48F /* Preferences.xib */; };
 		DA60FFE6194E83E000BAC48F /* PDKeychainBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFE3194E83E000BAC48F /* PDKeychainBindings.m */; };
 		DA60FFE7194E83E000BAC48F /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFE5194E83E000BAC48F /* PDKeychainBindingsController.m */; };
+		DA60FFEB194E904F00BAC48F /* TunetLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFEA194E904E00BAC48F /* TunetLogin.m */; };
+		DA60FFEE194EB0D800BAC48F /* TunetNetworkUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFED194EB0D800BAC48F /* TunetNetworkUtils.m */; };
 		DA70E0FC194C386B00540D41 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA70E0FB194C386B00540D41 /* Cocoa.framework */; };
 		DA70E106194C386B00540D41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA70E104194C386B00540D41 /* InfoPlist.strings */; };
 		DA70E108194C386B00540D41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA70E107194C386B00540D41 /* main.m */; };
@@ -43,6 +45,10 @@
 		DA60FFE3194E83E000BAC48F /* PDKeychainBindings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindings.m; sourceTree = "<group>"; };
 		DA60FFE4194E83E000BAC48F /* PDKeychainBindingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindingsController.h; sourceTree = "<group>"; };
 		DA60FFE5194E83E000BAC48F /* PDKeychainBindingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindingsController.m; sourceTree = "<group>"; };
+		DA60FFE9194E904E00BAC48F /* TunetLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TunetLogin.h; sourceTree = "<group>"; };
+		DA60FFEA194E904E00BAC48F /* TunetLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TunetLogin.m; sourceTree = "<group>"; };
+		DA60FFEC194EB0D800BAC48F /* TunetNetworkUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TunetNetworkUtils.h; sourceTree = "<group>"; };
+		DA60FFED194EB0D800BAC48F /* TunetNetworkUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TunetNetworkUtils.m; sourceTree = "<group>"; };
 		DA70E0F8194C386B00540D41 /* AutoISATAP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoISATAP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA70E0FB194C386B00540D41 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		DA70E0FE194C386B00540D41 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -145,6 +151,10 @@
 		DA70E101194C386B00540D41 /* AutoISATAP */ = {
 			isa = PBXGroup;
 			children = (
+				DA60FFE9194E904E00BAC48F /* TunetLogin.h */,
+				DA60FFEC194EB0D800BAC48F /* TunetNetworkUtils.h */,
+				DA60FFED194EB0D800BAC48F /* TunetNetworkUtils.m */,
+				DA60FFEA194E904E00BAC48F /* TunetLogin.m */,
 				DA60FFE8194E83E800BAC48F /* PDKeychainBindings */,
 				DA70E10D194C386B00540D41 /* AppDelegate.h */,
 				DA70E10E194C386B00540D41 /* AppDelegate.m */,
@@ -325,7 +335,9 @@
 				DA70E10F194C386B00540D41 /* AppDelegate.m in Sources */,
 				DA60FFE6194E83E000BAC48F /* PDKeychainBindings.m in Sources */,
 				DA70E108194C386B00540D41 /* main.m in Sources */,
+				DA60FFEE194EB0D800BAC48F /* TunetNetworkUtils.m in Sources */,
 				DA60FFE7194E83E000BAC48F /* PDKeychainBindingsController.m in Sources */,
+				DA60FFEB194E904F00BAC48F /* TunetLogin.m in Sources */,
 				DA60FFDF194DBBF200BAC48F /* Preferences.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

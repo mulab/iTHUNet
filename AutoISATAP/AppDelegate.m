@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "GCNetworkReachability.h"
 #import "PDKeychainBindings.h"
+#import "TunetNetworkUtils.h"
 
 @implementation AppDelegate
 
@@ -34,7 +35,6 @@
         }
     }];
     
-    [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"textField": @"42"}];
 }
 
 - (void) awakeFromNib {
@@ -46,15 +46,9 @@
 
 - (IBAction)itemClickFrom:(NSMenuItem *)sender {
     NSLog(@"Click from %@", sender);
-    PDKeychainBindings * bindings = [PDKeychainBindings sharedKeychainBindings];
-    NSLog(@"%@", [bindings stringForKey:@"password"]);
+    NSString * password = [[PDKeychainBindings sharedKeychainBindings] stringForKey:@"loginPassword"];
+    NSString * username = [[NSUserDefaults standardUserDefaults] stringForKey:@"loginUsername"];
+    NSLog(@"Username: %@, Password: %@", username, password);
 }
 
-- (IBAction)toggleAutoSetup:(NSMenuItem *)sender {
-    NSInteger state = [sender state];
-    if (state == NSOffState)
-        [sender setState:NSOnState];
-    else
-        [sender setState:NSOffState];
-}
 @end
