@@ -4,7 +4,7 @@
 <dict>
 	<key>SMAuthorizedClients</key>
 	<array>
-		<string>identifier &quot;blahgeek.AutoISATAP&quot;</string>
+		<string>identifier &quot;blahgeek.AutoISATAP&quot; and certificate leaf[subject.CN] = &quot;BlahGeek&apos;s Self-Signed App&quot;</string>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
