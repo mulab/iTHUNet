@@ -29,11 +29,11 @@
                         <tabViewItems>
                             <tabViewItem label="General" identifier="1" id="cA5-Pm-tIy">
                                 <view key="view" id="0ka-9N-ETg">
-                                    <rect key="frame" x="10" y="33" width="186" height="0.0"/>
+                                    <rect key="frame" x="10" y="33" width="227" height="233"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jZl-oJ-iON">
-                                            <rect key="frame" x="20" y="-36" width="130" height="18"/>
+                                            <rect key="frame" x="20" y="197" width="130" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Start me at Login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="hAb-BC-SgA">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -41,7 +41,7 @@
                                             </buttonCell>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sSy-gi-HHk">
-                                            <rect key="frame" x="20" y="-56" width="105" height="18"/>
+                                            <rect key="frame" x="20" y="177" width="105" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Send statistic" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Jfj-mm-xsP">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -52,7 +52,7 @@
                                             </connections>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8eV-Pm-8Y6">
-                                            <rect key="frame" x="20" y="-76" width="150" height="18"/>
+                                            <rect key="frame" x="20" y="157" width="150" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Show Notification" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="yQU-Zw-I8c">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>

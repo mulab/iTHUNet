@@ -11,4 +11,5 @@
 @interface TunetNetworkUtils : NSObject
 
 + (NSString *)md5: (NSString *)input;
++ (BOOL)checkIPInNetworks: (NSArray *)networks forIP: (NSString *) ipaddr;
 @end

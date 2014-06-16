@@ -23,4 +23,27 @@
     return  output;
 }
 
++ (BOOL)checkIPInNetworks:(NSArray *)networks forIP:(NSString *)ipaddr {
+    NSUInteger (^parseIP)(NSString *) = ^ NSUInteger (NSString * address) {
+        NSArray * nums = [[address stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsSeparatedByString:@":"];
+        if([nums count] != 4) return 0;
+        NSUInteger ret = 0;
+        for(NSString * s in nums) {
+            ret <<= 8;
+            ret += [s integerValue];
+        }
+        return ret;
+    };
+    NSUInteger ip_addr = parseIP(ipaddr);
+    for(NSDictionary * network in networks) {
+        NSUInteger network_addr = parseIP([network objectForKey:@"network"]);
+        if(network_addr == 0) continue;
+        NSInteger network_prefixlen = [(NSString *)[network objectForKey:@"prefixlen"] integerValue];
+        NSInteger mask_len = 32 - network_prefixlen;
+        if((network_addr >> mask_len) == (ip_addr >> mask_len))
+            return YES;
+    }
+    return NO;
+}
+
 @end
