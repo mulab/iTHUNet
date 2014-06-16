@@ -161,6 +161,9 @@
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <binding destination="Vy8-6U-RfR" name="value" keyPath="values.enableAutoISATAP" id="UC8-tQ-1oY"/>
+                                            </connections>
                                         </button>
                                         <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAc-pP-XfS">
                                             <rect key="frame" x="17" y="17" width="193" height="163"/>

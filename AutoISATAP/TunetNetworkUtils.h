@@ -11,7 +11,4 @@
 @interface TunetNetworkUtils : NSObject
 
 + (NSString *)md5: (NSString *)input;
-+ (NSString *)getBSSID;
-+ (NSString *)getMACAddr;
-
 @end

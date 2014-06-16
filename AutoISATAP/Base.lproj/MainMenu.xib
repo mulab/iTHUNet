@@ -14,6 +14,7 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
                 <outlet property="statusMenu" destination="gyu-K5-GyU" id="6aX-Ua-Bsx"/>
+                <outlet property="tunetLogin" destination="5oQ-38-SZq" id="Bym-nb-bYk"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -668,6 +669,13 @@
         </menu>
         <menu id="gyu-K5-GyU">
             <items>
+                <menuItem title="Login Status" enabled="NO" id="eI9-7y-Cc9">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="ISATAP Status" enabled="NO" id="WFG-Hy-Ixg">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="HJP-wf-McE"/>
                 <menuItem title="Login Now" id="cXp-iw-ErH">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -688,6 +696,11 @@
             </items>
         </menu>
         <customObject id="QL7-JF-3GD" customClass="Preferences"/>
-        <customObject id="5oQ-38-SZq" customClass="TunetLogin"/>
+        <customObject id="5oQ-38-SZq" customClass="TunetLogin">
+            <connections>
+                <outlet property="isatapStatusMenuItem" destination="WFG-Hy-Ixg" id="j1H-h7-5by"/>
+                <outlet property="loginStatusMenuItem" destination="eI9-7y-Cc9" id="r3r-WD-YzO"/>
+            </connections>
+        </customObject>
     </objects>
 </document>

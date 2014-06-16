@@ -23,13 +23,4 @@
     return  output;
 }
 
-+ (NSString *)getBSSID {
-    return [[CWInterface interface] bssid];
-}
-
-+ (NSString *)getMACAddr {
-    return [[CWInterface interface] hardwareAddress];
-}
-
-
 @end
