@@ -217,7 +217,7 @@
             NSString * errorString = [substrings objectAtIndex:0];
             NSError * error = [NSError errorWithDomain:@"loginError"
                                                   code:0
-                                              userInfo:[NSDictionary dictionaryWithObject:errorString
+                                              userInfo:[NSDictionary dictionaryWithObject:NSLocalizedString(errorString, nil)
                                                                                    forKey:NSLocalizedDescriptionKey]];
             [self loginDoneWithError:error];
         } else {
@@ -228,7 +228,7 @@
     [request setFailedBlock:^{
         [self loginDoneWithError:[NSError errorWithDomain:@"loginError"
                                                      code:1
-                                                 userInfo:[NSDictionary dictionaryWithObject:@"Unknown error"
+                                                 userInfo:[NSDictionary dictionaryWithObject:NSLocalizedString(@"Unknown Error", nil)
                                                                                       forKey:NSLocalizedDescriptionKey]]];
     }];
     
