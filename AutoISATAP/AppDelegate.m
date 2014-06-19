@@ -38,19 +38,20 @@ static NSDictionary * defaultValues() {
     [[NSUserDefaultsController sharedUserDefaultsController] setInitialValues:defaultValues()];
     
     self->reachv4 = [GCNetworkReachability reachabilityWithInternetAddressString:@"166.111.8.28"];
-    self->reachv6 = [GCNetworkReachability reachabilityWithIPv6AddressString:@"2001:4860:4860::8888"];
+//    self->reachv6 = [GCNetworkReachability reachabilityWithIPv6AddressString:@"2001:4860:4860::8888"];
     [self->reachv4 startMonitoringNetworkReachabilityWithHandler:^(GCNetworkReachabilityStatus status) {
         switch (status) {
             case GCNetworkReachabilityStatusNotReachable:
-                NSLog(@"Not reachable!");
+                NSLog(@"Reachability: Not reachable!");
                 break;
                 
             case GCNetworkReachabilityStatusWiFi:
-                NSLog(@"Reachable via WiFi!");
+                NSLog(@"Reachability: Reachable via WiFi! doLogin now!");
+                [self.tunetLogin doLoginFromUserCmd:NO];
                 break;
                 
             case GCNetworkReachabilityStatusWWAN:
-                NSLog(@"Reachable via WWAN");
+                NSLog(@"Reachability: Reachable via WWAN");
                 
             default:
                 break;

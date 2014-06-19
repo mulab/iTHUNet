@@ -65,7 +65,8 @@
         return;
     }
     if([[NSUserDefaults standardUserDefaults] integerForKey:@"enableAutoLogin"] == NSOffState &&
-       [[NSUserDefaults standardUserDefaults] integerForKey:@"enableAutoISATAP"] == NSOffState) {
+       [[NSUserDefaults standardUserDefaults] integerForKey:@"enableAutoISATAP"] == NSOffState &&
+       self.loginStatus == TunetStatusInit) {
         NSLog(@"Nothing to notify");
         return;
     }
@@ -73,7 +74,7 @@
     noti.title = @"iTHUNet Auto Login";
     noti.soundName = NSUserNotificationDefaultSoundName;
     NSMutableString * text = [NSMutableString stringWithString:@""];
-    if([[NSUserDefaults standardUserDefaults] integerForKey:@"enableAutoLogin"] == NSOnState) {
+    if([[NSUserDefaults standardUserDefaults] integerForKey:@"enableAutoLogin"] == NSOnState || self.loginStatus != TunetStatusInit) {
         if(self.loginStatus == TunetStatusOK) {
             [text appendString:@"Login OK"];
             if (self.locationBuildingName) [text appendFormat:@" @ %@", self.locationBuildingName];
@@ -170,14 +171,14 @@
     [request startAsynchronous];
 }
 
-- (IBAction)doLogin:(id)sender {
+- (void)doLoginFromUserCmd: (BOOL)fromUser {
     if (self.isRunning) {
         NSLog(@"Already running, return.");
         return;
     }
     [self reset];
     self.isRunning = YES;
-    if ([[NSUserDefaults standardUserDefaults] integerForKey:@"enableAutoLogin"] == NSOffState) {
+    if (!fromUser && [[NSUserDefaults standardUserDefaults] integerForKey:@"enableAutoLogin"] == NSOffState) {
         NSLog(@"Auto login disabled, goto isatap");
         [self doISATAP];
         return;
@@ -227,6 +228,11 @@
     }];
     
     [request startAsynchronous];
+
+}
+
+- (IBAction)doLogin:(id)sender {
+    [self doLoginFromUserCmd:YES];
 }
 
 @end

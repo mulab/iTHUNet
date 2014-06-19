@@ -31,6 +31,8 @@ typedef enum {
 
 - (void)reset;
 
+- (void)doLoginFromUserCmd: (BOOL)fromUser;
+
 - (void)updateMenuItem;
 - (void)sendUserNotification;
 

@@ -170,14 +170,14 @@
                                             </connections>
                                         </button>
                                         <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAc-pP-XfS">
-                                            <rect key="frame" x="34" y="37" width="193" height="132"/>
+                                            <rect key="frame" x="38" y="37" width="189" height="132"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" ambiguous="YES" misplaced="YES" id="woX-Kn-xu0">
-                                                <rect key="frame" x="1" y="17" width="191" height="114"/>
+                                                <rect key="frame" x="1" y="17" width="187" height="114"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="og2-DO-C1w" id="mHp-Eg-xQX">
-                                                        <rect key="frame" x="0.0" y="0.0" width="191" height="114"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="187" height="114"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <size key="intercellSpacing" width="3" height="2"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -203,7 +203,7 @@
                                                                     </binding>
                                                                 </connections>
                                                             </tableColumn>
-                                                            <tableColumn width="69" minWidth="40" maxWidth="1000" id="Ssu-fK-2hY">
+                                                            <tableColumn width="65" minWidth="40" maxWidth="1000" id="Ssu-fK-2hY">
                                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Prefixlen">
                                                                     <font key="font" metaFont="smallSystem"/>
                                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -237,7 +237,7 @@
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                             <tableHeaderView key="headerView" id="og2-DO-C1w">
-                                                <rect key="frame" x="0.0" y="0.0" width="191" height="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="17"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </tableHeaderView>
                                         </scrollView>
@@ -305,7 +305,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ffg-4Q-K2W">
-                                            <rect key="frame" x="38" y="180" width="67" height="17"/>
+                                            <rect key="frame" x="36" y="180" width="67" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Prefix" id="Mqd-Kx-eYt">
                                                 <font key="font" metaFont="system"/>
