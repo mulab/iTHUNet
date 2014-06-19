@@ -18,6 +18,7 @@
 #define TUNET_LOGIN_URL "http://net.tsinghua.edu.cn/cgi-bin/do_login"
 #define TUNET_LOCATION_URL "http://location.sip6.edu.cn:9090/lbs/getStationLocationJSON/"
 
+
 @implementation TunetLogin
 
 - (id)init {
@@ -39,23 +40,23 @@
 - (void)updateMenuItem {
     NSString * text = nil;
     switch (self.loginStatus) {
-        case TunetStatusInit: text = @"Not Login"; break;
-        case TunetStatusError: text = @"Login Error"; break;
-        case TunetStatusOK: text = @"Login OK"; break;
+        case TunetStatusInit: text = NSLocalizedString(@"Not Login", nil); break;
+        case TunetStatusError: text = NSLocalizedString(@"Login Error", nil); break;
+        case TunetStatusOK: text = NSLocalizedString(@"Login OK", nil); break;
         default: break;
     }
     if([[NSUserDefaults standardUserDefaults] integerForKey:@"enableAutoLogin"] == NSOffState)
-        text = @"Auto Login Disabled";
+        text = NSLocalizedString(@"Auto Login Disabled", nil);
     [self.loginStatusMenuItem setTitle:text];
     
     switch (self.isatapStatus) {
-        case TunetStatusInit: text = @"ISATAP Not Configured"; break;
-        case TunetStatusOK: text = @"ISATAP OK"; break;
-        case TunetStatusError: text = @"ISATAP Error"; break;
+        case TunetStatusInit: text = NSLocalizedString(@"ISATAP Not Configured", nil); break;
+        case TunetStatusOK: text = NSLocalizedString(@"ISATAP OK", nil); break;
+        case TunetStatusError: text = NSLocalizedString(@"ISATAP Error", nil); break;
         default: break;
     }
     if([[NSUserDefaults standardUserDefaults] integerForKey:@"enableAutoISATAP"] == NSOffState)
-        text = @"ISATAP Disabled";
+        text = NSLocalizedString(@"ISATAP Disabled", nil);
     [self.isatapStatusMenuItem setTitle:text];
 }
 
@@ -71,23 +72,23 @@
         return;
     }
     NSUserNotification * noti = [[NSUserNotification alloc] init];
-    noti.title = @"iTHUNet Auto Login";
+    noti.title = NSLocalizedString(@"iTHUNet Auto Login", @"Notification title");
     noti.soundName = NSUserNotificationDefaultSoundName;
     NSMutableString * text = [NSMutableString stringWithString:@""];
     if([[NSUserDefaults standardUserDefaults] integerForKey:@"enableAutoLogin"] == NSOnState || self.loginStatus != TunetStatusInit) {
         if(self.loginStatus == TunetStatusOK) {
-            [text appendString:@"Login OK"];
+            [text appendString:NSLocalizedString(@"Login OK", nil)];
             if (self.locationBuildingName) [text appendFormat:@" @ %@", self.locationBuildingName];
             if (self.locationBuildingFloor) [text appendFormat:@",%@", self.locationBuildingFloor];
         } else {
-            [text appendString:@"Login Failed"];
+            [text appendString:NSLocalizedString(@"Login Failed", nil)];
             if (self.loginError) [text appendFormat:@": %@", [self.loginError localizedDescription]];
         }
         [text appendString:@"; "];
     }
     if([[NSUserDefaults standardUserDefaults] integerForKey:@"enableAutoISATAP"] == NSOnState) {
-        if(self.isatapStatus == TunetStatusOK) [text appendString:@"ISATAP OK"];
-        else [text appendString:@"ISATAP Not Configured"];
+        if(self.isatapStatus == TunetStatusOK) [text appendString:NSLocalizedString(@"ISATAP OK", nil)];
+        else [text appendString:NSLocalizedString(@"ISATAP Not Configured", nil)];
     }
     noti.informativeText = text;
     [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:noti];

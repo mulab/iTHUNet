@@ -1,0 +1,84 @@
+
+/* Class = "NSButtonCell"; title = "Enable Auto Login"; ObjectID = "650-Nf-Nk8"; */
+"650-Nf-Nk8.title" = "校园网自动登录";
+
+/* Class = "NSButtonCell"; title = "+"; ObjectID = "8W1-pn-VEl"; */
+"8W1-pn-VEl.title" = "+";
+
+/* Class = "NSWindow"; title = "Preferences"; ObjectID = "F0z-JX-Cv5"; */
+"F0z-JX-Cv5.title" = "Preferences";
+
+/* Class = "NSTextFieldCell"; title = "Gateway"; ObjectID = "Hdp-wL-tfb"; */
+"Hdp-wL-tfb.title" = "网关";
+
+/* Class = "NSTextFieldCell"; placeholderString = "zhangting12"; ObjectID = "IJ0-nb-mDY"; */
+"IJ0-nb-mDY.placeholderString" = "zhangting12";
+
+/* Class = "NSButtonCell"; title = "Send statistic"; ObjectID = "Jfj-mm-xsP"; */
+"Jfj-mm-xsP.title" = "发送统计数据给开发者";
+
+/* Class = "NSButtonCell"; title = "Reset All"; ObjectID = "KJ9-eF-ucf"; */
+"KJ9-eF-ucf.title" = "重设所有设置";
+
+/* Class = "NSTextFieldCell"; title = "Prefix"; ObjectID = "Mqd-Kx-eYt"; */
+"Mqd-Kx-eYt.title" = "前缀";
+
+/* Class = "NSTableColumn"; headerCell.title = "Prefixlen"; ObjectID = "Ssu-fK-2hY"; */
+"Ssu-fK-2hY.headerCell.title" = "掩码";
+
+/* Class = "NSTextFieldCell"; title = "Password"; ObjectID = "Vlp-gi-pt1"; */
+"Vlp-gi-pt1.title" = "密码";
+
+/* Class = "NSSecureTextFieldCell"; placeholderString = "19950507"; ObjectID = "aaw-Mt-sUS"; */
+"aaw-Mt-sUS.placeholderString" = "19950507";
+
+/* Class = "NSTabViewItem"; label = "General"; ObjectID = "cA5-Pm-tIy"; */
+"cA5-Pm-tIy.label" = "通用";
+
+/* Class = "NSButtonCell"; title = "Start me at Login"; ObjectID = "hAb-BC-SgA"; */
+"hAb-BC-SgA.title" = "用户登录时自动启动";
+
+/* Class = "NSTabViewItem"; label = "Login"; ObjectID = "hPZ-pH-Ue1"; */
+"hPZ-pH-Ue1.label" = "登录";
+
+/* Class = "NSButtonCell"; title = "Enable Auto ISATAP"; ObjectID = "iMb-ZO-eUG"; */
+"iMb-ZO-eUG.title" = "自动配置ISATAP";
+
+/* Class = "NSTextFieldCell"; placeholderString = "16"; ObjectID = "mJl-J8-QrQ"; */
+"mJl-J8-QrQ.placeholderString" = "16";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "mJl-J8-QrQ"; */
+"mJl-J8-QrQ.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; placeholderString = "123.234.0.0"; ObjectID = "mYj-3p-FqN"; */
+"mYj-3p-FqN.placeholderString" = "123.234.0.0";
+
+/* Class = "NSTextFieldCell"; title = "Text"; ObjectID = "mYj-3p-FqN"; */
+"mYj-3p-FqN.title" = "Text";
+
+/* Class = "IBBindingConnection"; ibShadowedIsNilPlaceholder = "zhangting12"; ObjectID = "oxo-xf-wf2"; */
+"oxo-xf-wf2.ibShadowedIsNilPlaceholder" = "zhangting12";
+
+/* Class = "IBBindingConnection"; ibShadowedNoSelectionPlaceholder = "zhangting12"; ObjectID = "oxo-xf-wf2"; */
+"oxo-xf-wf2.ibShadowedNoSelectionPlaceholder" = "zhangting12";
+
+/* Class = "IBBindingConnection"; ibShadowedNotApplicablePlaceholder = "zhangting12"; ObjectID = "oxo-xf-wf2"; */
+"oxo-xf-wf2.ibShadowedNotApplicablePlaceholder" = "zhangting12";
+
+/* Class = "NSButtonCell"; title = "Show Password"; ObjectID = "s98-1B-cLj"; */
+"s98-1B-cLj.title" = "显示密码";
+
+/* Class = "NSButtonCell"; title = "-"; ObjectID = "tSO-7x-Fdw"; */
+"tSO-7x-Fdw.title" = "-";
+
+/* Class = "NSTableColumn"; headerCell.title = "Enabled Network"; ObjectID = "vd4-Hp-Qjg"; */
+"vd4-Hp-Qjg.headerCell.title" = "启用的网段";
+
+/* Class = "NSButtonCell"; title = "Show Notification"; ObjectID = "yQU-Zw-I8c"; */
+"yQU-Zw-I8c.title" = "显示通知";
+
+/* Class = "NSTextFieldCell"; title = "Username"; ObjectID = "ycJ-dI-Y8W"; */
+"ycJ-dI-Y8W.title" = "用户名";
+
+/* Class = "NSTabViewItem"; label = "IPv6"; ObjectID = "zvD-Qi-VI9"; */
+"zvD-Qi-VI9.label" = "IPv6";

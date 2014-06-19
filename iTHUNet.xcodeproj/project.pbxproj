@@ -11,8 +11,9 @@
 		DA1193C61952656900D2676E /* com.blahgeek.TunetISATAPHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA60FFF3194F120300BAC48F /* com.blahgeek.TunetISATAPHelper */; };
 		DA1193C91952678400D2676E /* TunetISATAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1193C81952678400D2676E /* TunetISATAPHelper.m */; };
 		DA1193CE1952B4F600D2676E /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1193CD1952B4F600D2676E /* icon-small.png */; };
+		DA1193D31952B86500D2676E /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA1193D51952B86500D2676E /* Preferences.xib */; };
+		DA1193DB1952BEEA00D2676E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA1193DA1952BEEA00D2676E /* Localizable.strings */; };
 		DA60FFDF194DBBF200BAC48F /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFDD194DBBF200BAC48F /* Preferences.m */; };
-		DA60FFE0194DBBF200BAC48F /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA60FFDE194DBBF200BAC48F /* Preferences.xib */; };
 		DA60FFE6194E83E000BAC48F /* PDKeychainBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFE3194E83E000BAC48F /* PDKeychainBindings.m */; };
 		DA60FFE7194E83E000BAC48F /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFE5194E83E000BAC48F /* PDKeychainBindingsController.m */; };
 		DA60FFEB194E904F00BAC48F /* TunetLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFEA194E904E00BAC48F /* TunetLogin.m */; };
@@ -70,9 +71,15 @@
 		DA1193C71952678400D2676E /* TunetISATAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TunetISATAPHelper.h; sourceTree = "<group>"; };
 		DA1193C81952678400D2676E /* TunetISATAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TunetISATAPHelper.m; sourceTree = "<group>"; };
 		DA1193CD1952B4F600D2676E /* icon-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-small.png"; path = "../icon-small.png"; sourceTree = "<group>"; };
+		DA1193CF1952B6ED00D2676E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.strings"; sourceTree = "<group>"; };
+		DA1193D01952B6ED00D2676E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		DA1193D11952B6ED00D2676E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hans"; path = "zh-Hans.lproj/Credits.rtf"; sourceTree = "<group>"; };
+		DA1193D21952B6ED00D2676E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		DA1193D61952B87400D2676E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Preferences.xib; sourceTree = "<group>"; };
+		DA1193D71952B88400D2676E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Preferences.strings"; sourceTree = "<group>"; };
+		DA1193DA1952BEEA00D2676E /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		DA60FFDC194DBBF200BAC48F /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
 		DA60FFDD194DBBF200BAC48F /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
-		DA60FFDE194DBBF200BAC48F /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		DA60FFE2194E83E000BAC48F /* PDKeychainBindings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindings.h; sourceTree = "<group>"; };
 		DA60FFE3194E83E000BAC48F /* PDKeychainBindings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindings.m; sourceTree = "<group>"; };
 		DA60FFE4194E83E000BAC48F /* PDKeychainBindingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindingsController.h; sourceTree = "<group>"; };
@@ -217,7 +224,7 @@
 				DA70E110194C386B00540D41 /* MainMenu.xib */,
 				DA60FFDC194DBBF200BAC48F /* Preferences.h */,
 				DA60FFDD194DBBF200BAC48F /* Preferences.m */,
-				DA60FFDE194DBBF200BAC48F /* Preferences.xib */,
+				DA1193D51952B86500D2676E /* Preferences.xib */,
 				DA70E113194C386B00540D41 /* Images.xcassets */,
 				DA1193C71952678400D2676E /* TunetISATAPHelper.h */,
 				DA1193C81952678400D2676E /* TunetISATAPHelper.m */,
@@ -233,6 +240,7 @@
 				DA1193CD1952B4F600D2676E /* icon-small.png */,
 				DA70E103194C386B00540D41 /* iTHUNet-Info.plist */,
 				DA70E104194C386B00540D41 /* InfoPlist.strings */,
+				DA1193DA1952BEEA00D2676E /* Localizable.strings */,
 				DA70E107194C386B00540D41 /* main.m */,
 				DA1193C51952643B00D2676E /* iTHUNet-Prefix.pch */,
 				DA70E10A194C386B00540D41 /* Credits.rtf */,
@@ -337,6 +345,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = DA70E0EF194C386B00540D41;
 			productRefGroup = DA70E0F9194C386B00540D41 /* Products */;
@@ -358,9 +367,10 @@
 				DA70E106194C386B00540D41 /* InfoPlist.strings in Resources */,
 				DA70E114194C386B00540D41 /* Images.xcassets in Resources */,
 				DA70E10C194C386B00540D41 /* Credits.rtf in Resources */,
+				DA1193DB1952BEEA00D2676E /* Localizable.strings in Resources */,
 				DA70E112194C386B00540D41 /* MainMenu.xib in Resources */,
 				DA1193CE1952B4F600D2676E /* icon-small.png in Resources */,
-				DA60FFE0194DBBF200BAC48F /* Preferences.xib in Resources */,
+				DA1193D31952B86500D2676E /* Preferences.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,10 +460,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		DA1193D51952B86500D2676E /* Preferences.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA1193D61952B87400D2676E /* Base */,
+				DA1193D71952B88400D2676E /* zh-Hans */,
+			);
+			name = Preferences.xib;
+			sourceTree = "<group>";
+		};
 		DA70E104194C386B00540D41 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				DA70E105194C386B00540D41 /* en */,
+				DA1193D01952B6ED00D2676E /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -462,6 +482,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				DA70E10B194C386B00540D41 /* en */,
+				DA1193D11952B6ED00D2676E /* zh-Hans */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
@@ -470,6 +491,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				DA70E111194C386B00540D41 /* Base */,
+				DA1193CF1952B6ED00D2676E /* zh-Hans */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -478,6 +500,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				DA70E123194C386C00540D41 /* en */,
+				DA1193D21952B6ED00D2676E /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
