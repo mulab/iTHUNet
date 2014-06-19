@@ -121,13 +121,14 @@
         self.isatapStatus = TunetStatusInit;
         return [self doFinish];
     }
-    [TunetNetworkUtils createInterfaceForIP:ip
-                                  atGateway:[defaults stringForKey:@"isatapGateway"]
-                             withLinkPrefix:[defaults stringForKey:@"isatapLinkPrefix"]
-                            andGlobalPrefix:[defaults stringForKey:@"isatapPrefix"]
-                                 withHelper:helper];
+    BOOL create_success = [TunetNetworkUtils createInterfaceForIP:ip
+                                                        atGateway:[defaults stringForKey:@"isatapGateway"]
+                                                   withLinkPrefix:[defaults stringForKey:@"isatapLinkPrefix"]
+                                                  andGlobalPrefix:[defaults stringForKey:@"isatapPrefix"]
+                                                       withHelper:helper];
     [helper end];
-    self.isatapStatus = TunetStatusOK;
+    if(create_success) self.isatapStatus = TunetStatusOK;
+    else self.isatapStatus = TunetStatusError;
     return [self doFinish];
 }
 
@@ -184,11 +185,8 @@
     NSString * password = [[PDKeychainBindings sharedKeychainBindings] stringForKey:@"loginPassword"];
     NSString * username = [[NSUserDefaults standardUserDefaults] stringForKey:@"loginUsername"];
     NSLog(@"Before login, Username: %@, Password: %@", username, password);
-    if (!username || !password) {
-        NSLog(@"Username/Password is null, goto isatap");
-        [self doISATAP];
-        return;
-    }
+    if(username == nil) username = @"";
+    if(password == nil) password = @"";
     
     __unsafe_unretained __block ASIFormDataRequest * request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@TUNET_LOGIN_URL]];
     [request setTimeOutSeconds: 1];

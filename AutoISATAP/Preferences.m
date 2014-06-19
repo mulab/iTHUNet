@@ -16,6 +16,12 @@
 
 @implementation Preferences
 
+/* We do this to catch the case where the user enters a value into one of the text fields but closes the window without hitting enter or tab.
+ */
+- (BOOL)windowShouldClose:(NSWindow *)window {
+    return [window makeFirstResponder:nil]; // validate editing
+}
+
 
 - (id)init {
     self = [super initWithWindowNibName:@"Preferences"];

@@ -31,7 +31,6 @@
 }
 
 + (BOOL)checkIPInNetworks:(NSArray *)networks forIP:(NSString *)ipaddr {
-    NSLog(@"Check: %@", ipaddr);
     NSUInteger (^parseIP)(NSString *) = ^ NSUInteger (NSString * address) {
         NSArray * nums = [[address stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] componentsSeparatedByString:@"."];
         if([nums count] != 4) return 0;
@@ -44,7 +43,6 @@
     };
     NSUInteger ip_addr = parseIP(ipaddr);
     for(NSDictionary * network in networks) {
-        NSLog(@"For network: %@", [network objectForKey:@"network"]);
         NSUInteger network_addr = parseIP([network objectForKey:@"network"]);
         if(network_addr == 0) continue;
         NSInteger network_prefixlen = [(NSString *)[network objectForKey:@"prefixlen"] integerValue];
@@ -79,7 +77,7 @@
     NSLog(@"Destroying ISATAP interface...");
     NSString * cmd = [NSString stringWithFormat:@"/sbin/ifconfig %@ destroy", @ISATAP_IF_NAME];
     [helper runCommand:cmd];
-    return YES; // FIXME
+    return helper.error == nil;
 }
 
 + (BOOL)createInterfaceForIP: (NSString *)localIP atGateway: (NSString *)gateway withLinkPrefix: (NSString *)linkPrefix andGlobalPrefix: (NSString *)globalPrefix withHelper:(TunetISATAPHelper *)helper{
@@ -91,7 +89,7 @@
     [helper runCommand:[basecmd stringByAppendingFormat:@"inet6 %@:%@ prefixlen 64", globalPrefix, localIP]];
     [helper runCommand:@"/sbin/route delete -inet6 default"];
     [helper runCommand:[NSString stringWithFormat:@"/sbin/route add -inet6 default %@:%@", globalPrefix, gateway]];
-    return YES; // FIXME
+    return helper.error == nil; // FIXME
 }
 
 @end

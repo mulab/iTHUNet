@@ -62,9 +62,11 @@
 
 - (BOOL) start {
     NSLog(@"Start connection to helper...");
+    self.error = nil;
     self.sock = socket(PF_LOCAL, SOCK_STREAM, 0);
-    if (self.sock == -1) {
+    if (self.sock < 0) {
         NSLog(@"error creating socket: %s", strerror(errno));
+        self.error = [NSError errorWithDomain:@"helperError" code:0 userInfo:nil];
         return NO;
     }
     struct sockaddr_un address = {
@@ -73,7 +75,11 @@
     };
     if (connect(self.sock, (const struct sockaddr *)&address, sizeof(address)) != 0) {
         NSLog(@"error connecting to socket: %s", strerror(errno));
-        if(self.sock != 0) close(self.sock);
+        self.error = [NSError errorWithDomain:@"helperError" code:1 userInfo:nil];
+        if(self.sock > 0){
+            close(self.sock);
+            self.sock = -1;
+        }
         return NO;
     }
     return YES;
@@ -95,14 +101,15 @@
     size_t bytes_written = send(self.sock, command, command_len, 0);
     if (bytes_written != command_len) {
         NSLog(@"couldn't write to socket: %s", strerror(errno));
+        self.error = [NSError errorWithDomain:@"helperError" code:2 userInfo:nil];
         return nil;
     }
     char *buffer = malloc(4096);
     
-    NSLog(@"Waiting for recv...");
+//    NSLog(@"Waiting for recv...");
     size_t bytes_read = recv(self.sock, buffer, 4095, 0);
     NSString * ret = [[NSString alloc] initWithBytes: buffer length: bytes_read encoding: NSUTF8StringEncoding];
-    NSLog(@"Recv: %zu bytes: %@", bytes_read, ret);
+//    NSLog(@"Recv: %zu bytes: %@", bytes_read, ret);
     free(buffer);
 
     return ret;

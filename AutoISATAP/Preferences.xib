@@ -79,8 +79,9 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="Vy8-6U-RfR" name="value" keyPath="values.loginUsername" id="aBC-Vx-Kaj">
+                                                <binding destination="Vy8-6U-RfR" name="value" keyPath="values.loginUsername" id="oxo-xf-wf2">
                                                     <dictionary key="options">
+                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
                                                         <string key="NSNoSelectionPlaceholder">zhangting12</string>
                                                         <string key="NSNotApplicablePlaceholder">zhangting12</string>
                                                         <string key="NSNullPlaceholder">zhangting12</string>
@@ -195,7 +196,11 @@
                                                                 </textFieldCell>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                 <connections>
-                                                                    <binding destination="5Mn-1B-coj" name="value" keyPath="arrangedObjects.network" id="5zd-uA-pQ1"/>
+                                                                    <binding destination="5Mn-1B-coj" name="value" keyPath="arrangedObjects.network" id="72l-y4-Mdj">
+                                                                        <dictionary key="options">
+                                                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                                        </dictionary>
+                                                                    </binding>
                                                                 </connections>
                                                             </tableColumn>
                                                             <tableColumn width="69" minWidth="40" maxWidth="1000" id="Ssu-fK-2hY">
@@ -211,7 +216,11 @@
                                                                 </textFieldCell>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                 <connections>
-                                                                    <binding destination="5Mn-1B-coj" name="value" keyPath="arrangedObjects.prefixlen" id="1kx-0l-LmC"/>
+                                                                    <binding destination="5Mn-1B-coj" name="value" keyPath="arrangedObjects.prefixlen" id="UJW-bb-ZDm">
+                                                                        <dictionary key="options">
+                                                                            <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                                        </dictionary>
+                                                                    </binding>
                                                                 </connections>
                                                             </tableColumn>
                                                         </tableColumns>
@@ -263,7 +272,11 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="Vy8-6U-RfR" name="value" keyPath="values.isatapGateway" id="X8e-3q-T7o"/>
+                                                <binding destination="Vy8-6U-RfR" name="value" keyPath="values.isatapGateway" id="P3N-yc-nzC">
+                                                    <dictionary key="options">
+                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                    </dictionary>
+                                                </binding>
                                             </connections>
                                         </textField>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uws-Bg-7Ps">
@@ -275,7 +288,11 @@
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <binding destination="Vy8-6U-RfR" name="value" keyPath="values.isatapPrefix" id="bgm-iS-XMH"/>
+                                                <binding destination="Vy8-6U-RfR" name="value" keyPath="values.isatapPrefix" id="ENT-2W-nXl">
+                                                    <dictionary key="options">
+                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                    </dictionary>
+                                                </binding>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sxf-ys-8O3">

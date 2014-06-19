@@ -17,6 +17,8 @@
 
 @property int sock;
 
+@property NSError * error;
+
 - (BOOL) start;
 - (void) end;
 - (NSString *) runCommand: (NSString *)cmd;

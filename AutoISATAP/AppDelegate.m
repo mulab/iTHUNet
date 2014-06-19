@@ -56,8 +56,9 @@ static NSDictionary * defaultValues() {
                 break;
         }
     }];
-    
     [TunetISATAPHelper installHelper];
+    [self.tunetLogin reset];
+    [self.tunetLogin updateMenuItem];
 }
 
 - (void) awakeFromNib {
