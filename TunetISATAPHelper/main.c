@@ -57,6 +57,7 @@ int main(int argc, const char * argv[])
             printf("No more command, return");
             break;
         }
+        recv_cmd[recv_cmd_len] = '\0';
         log_time();
         printf("Got command:%s\n", recv_cmd);
         

@@ -11,6 +11,12 @@
 #import <CoreWLAN/CoreWLAN.h>
 #import "TunetISATAPHelper.h"
 
+#include <ifaddrs.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+
 @implementation TunetNetworkUtils
 
 
@@ -48,6 +54,25 @@
     }
     return NO;
 }
+
++ (NSArray *)getIPAddress
+{
+    NSMutableArray * ret = [NSMutableArray array];
+    struct ifaddrs *interfaces = NULL;
+    struct ifaddrs *temp_addr = NULL;
+    if(getifaddrs(&interfaces) != 0) return ret;
+    
+    for(temp_addr = interfaces ; temp_addr != NULL ; temp_addr = temp_addr->ifa_next) {
+        if(temp_addr->ifa_addr->sa_family != AF_INET) continue;
+        NSString * addr = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
+        [ret addObject:addr];
+    }
+    
+    freeifaddrs(interfaces);
+    
+    return ret;
+}
+
 
 // for ISATAP
 + (BOOL)destroyInterfaceWithHelper:(TunetISATAPHelper *)helper {

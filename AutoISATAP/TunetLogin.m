@@ -82,9 +82,9 @@
             [text appendString:@"Login Failed"];
             if (self.loginError) [text appendFormat:@": %@", [self.loginError localizedDescription]];
         }
+        [text appendString:@"; "];
     }
     if([[NSUserDefaults standardUserDefaults] integerForKey:@"enableAutoISATAP"] == NSOnState) {
-        [text appendString:@"; "];
         if(self.isatapStatus == TunetStatusOK) [text appendString:@"ISATAP OK"];
         else [text appendString:@"ISATAP Not Configured"];
     }
@@ -105,7 +105,7 @@
     }
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     NSString * ip = nil;
-    for(NSString * ipaddr in [[NSHost currentHost] addresses]) {
+    for(NSString * ipaddr in [TunetNetworkUtils getIPAddress]) {
         NSLog(@"Got local IP: %@, checking...", ipaddr);
         if([TunetNetworkUtils checkIPInNetworks:[defaults arrayForKey:@"enabledISATAPNetworks"] forIP:ipaddr]) {
             NSLog(@"Match! Use this one.");

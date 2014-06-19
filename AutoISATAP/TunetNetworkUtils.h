@@ -16,6 +16,8 @@
 + (NSString *)md5: (NSString *)input;
 + (BOOL)checkIPInNetworks: (NSArray *)networks forIP: (NSString *) ipaddr;
 
++ (NSArray *)getIPAddress;
+
 // for ISATAP
 + (BOOL)destroyInterfaceWithHelper: (TunetISATAPHelper *)helper;
 + (BOOL)createInterfaceForIP: (NSString *)localIP atGateway: (NSString *)gateway withLinkPrefix: (NSString *)linkPrefix andGlobalPrefix: (NSString *)globalPrefix withHelper: (TunetISATAPHelper *)helper;
