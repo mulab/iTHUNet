@@ -12,6 +12,7 @@
 #import <ServiceManagement/ServiceManagement.h>
 #import <sys/socket.h>
 #import <sys/un.h>
+#import <time.h>
 
 @implementation TunetISATAPHelper
 
@@ -106,9 +107,22 @@
     }
     char *buffer = malloc(4096);
     
+    struct timeval tv;
+    tv.tv_sec = 0;
+    tv.tv_usec = 200000; // 0.2s
+    setsockopt(self.sock, SOL_SOCKET, SO_RCVTIMEO, (char *)&tv, sizeof(tv)); // set timeout
+    
 //    NSLog(@"Waiting for recv...");
+    NSString * ret = nil;
     size_t bytes_read = recv(self.sock, buffer, 4095, 0);
-    NSString * ret = [[NSString alloc] initWithBytes: buffer length: bytes_read encoding: NSUTF8StringEncoding];
+    if(bytes_read <= 0) {
+        NSLog(@"Ops! Nothing recved, continue.");
+        self.error = [NSError errorWithDomain:@"helperError" code:3 userInfo:nil];
+        ret = nil;
+    } else {
+        ret = [[NSString alloc] initWithBytes: buffer length: bytes_read encoding: NSUTF8StringEncoding];
+    }
+
 //    NSLog(@"Recv: %zu bytes: %@", bytes_read, ret);
     free(buffer);
 

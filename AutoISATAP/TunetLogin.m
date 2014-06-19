@@ -194,7 +194,7 @@
         return;
     }
     
-    NSLog(@"Before login, Username: %@, Password: %@", username, password);
+    NSLog(@"Before login, Username: %@", username);
     if(username == nil) username = @"";
     if(password == nil) password = @"";
     
