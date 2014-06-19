@@ -146,10 +146,11 @@
     NSURL * url = [NSURL URLWithString:@TUNET_LOCATION_URL];
     url = [url uq_URLByAppendingQueryDictionary: @{@"bssid": [[CWInterface interface] bssid],
                                                    @"mac": [[CWInterface interface] hardwareAddress]}];
-    __unsafe_unretained __block ASIHTTPRequest * request = [ASIHTTPRequest requestWithURL: url];
+    ASIHTTPRequest * request = [ASIHTTPRequest requestWithURL: url];
     [request setTimeOutSeconds: 1];
+    __block __unsafe_unretained typeof(request) _request = request;
     void (^completeBlock)(void) = ^{
-        NSError * error = [request error];
+        NSError * error = [_request error];
         if(error) {
             NSLog(@"Error: %@", error);
             return [self doISATAP];
@@ -190,7 +191,8 @@
     if(username == nil) username = @"";
     if(password == nil) password = @"";
     
-    __unsafe_unretained __block ASIFormDataRequest * request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@TUNET_LOGIN_URL]];
+    ASIFormDataRequest * request = [ASIFormDataRequest requestWithURL:
+                                    [NSURL URLWithString:@TUNET_LOGIN_URL]];
     [request setTimeOutSeconds: 1];
     [request setPostValue:username forKey:@"username"];
     [request setPostValue:[TunetNetworkUtils md5: password] forKey:@"password"];
@@ -198,8 +200,10 @@
     [request setPostValue:@"0" forKey:@"drop"];
     [request setPostValue:@"10" forKey:@"type"];
     
+    __block __unsafe_unretained typeof(request) _request = request;
+    
     [request setCompletionBlock: ^{
-        NSString * response = [request responseString];
+        NSString * response = [_request responseString];
         NSLog(@"Response: %@", response);
         NSError * error = nil;
         NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:@"\\d+,"
