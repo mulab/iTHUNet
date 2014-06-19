@@ -27,13 +27,20 @@
     self = [super initWithWindowNibName:@"Preferences"];
     [self.window setLevel:NSMainMenuWindowLevel];
     
+    [self.usernameField bind:@"value"
+                    toObject:[PDKeychainBindingsController sharedKeychainBindingsController]
+                 withKeyPath:[NSString stringWithFormat:@"values.%@", @"loginUsername"]
+                     options:[NSDictionary dictionaryWithObjectsAndKeys:
+                              [NSNumber numberWithBool:YES], NSContinuouslyUpdatesValueBindingOption,
+                              @"zhangting12", NSNullPlaceholderBindingOption, nil]];
+    
     for(NSTextField * textField in [NSArray arrayWithObjects:self.passwordField,
                                     self.shownPasswordField, nil]){
         [textField bind:@"value"
                toObject:[PDKeychainBindingsController sharedKeychainBindingsController]
             withKeyPath:[NSString stringWithFormat:@"values.%@", @"loginPassword"]
                 options:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES]
-                                                    forKey:@"NSContinuouslyUpdatesValue"]];
+                                                    forKey:NSContinuouslyUpdatesValueBindingOption]];
     }
 
     self->showingPassword = NO;

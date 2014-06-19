@@ -186,7 +186,7 @@
         return;
     }
     NSString * password = [[PDKeychainBindings sharedKeychainBindings] stringForKey:@"loginPassword"];
-    NSString * username = [[NSUserDefaults standardUserDefaults] stringForKey:@"loginUsername"];
+    NSString * username = [[PDKeychainBindings sharedKeychainBindings] stringForKey:@"loginUsername"];
     
     if(!fromUser && username == nil) {
         NSLog(@"Username not configured, ignore.");

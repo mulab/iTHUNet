@@ -13,6 +13,8 @@
     BOOL showingPassword;
 }
 
+@property (weak) IBOutlet NSTextField *usernameField;
+
 @property (weak) IBOutlet NSSecureTextField *passwordField;
 @property (weak) IBOutlet NSTextField *shownPasswordField;
 - (IBAction)togglePasswordShowing:(NSButton *)sender;

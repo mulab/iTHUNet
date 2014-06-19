@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="passwordField" destination="pbk-6K-34I" id="5MA-9k-RJy"/>
                 <outlet property="shownPasswordField" destination="lyO-VG-sQo" id="Qhp-yE-dzi"/>
+                <outlet property="usernameField" destination="eLb-jv-OmC" id="MdJ-Rj-iqK"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="Ehr-gg-QTX"/>
             </connections>
         </customObject>
@@ -17,7 +18,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="307" height="376"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="307" height="376"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -81,16 +82,6 @@
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
-                                            <connections>
-                                                <binding destination="Vy8-6U-RfR" name="value" keyPath="values.loginUsername" id="oxo-xf-wf2">
-                                                    <dictionary key="options">
-                                                        <bool key="NSContinuouslyUpdatesValue" value="YES"/>
-                                                        <string key="NSNoSelectionPlaceholder">zhangting12</string>
-                                                        <string key="NSNotApplicablePlaceholder">zhangting12</string>
-                                                        <string key="NSNullPlaceholder">zhangting12</string>
-                                                    </dictionary>
-                                                </binding>
-                                            </connections>
                                         </textField>
                                         <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pbk-6K-34I" userLabel="password">
                                             <rect key="frame" x="109" y="179" width="112" height="22"/>
