@@ -19,6 +19,6 @@
 	<key>StandardOutPath</key>
 	<string>/var/log/com.blahgeek.isatap.log</string>
 	<key>Label</key>
-	<string>blahgeek.TunetISATAPHelper</string>
+	<string>com.blahgeek.TunetISATAPHelper</string>
 </dict>
 </plist>

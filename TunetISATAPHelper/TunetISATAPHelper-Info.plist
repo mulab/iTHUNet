@@ -4,7 +4,7 @@
 <dict>
 	<key>SMAuthorizedClients</key>
 	<array>
-		<string>identifier &quot;blahgeek.AutoISATAP&quot; and certificate leaf[subject.CN] = &quot;BlahGeek&apos;s Self-Signed App&quot;</string>
+		<string>identifier &quot;com.blahgeek.iTHUNet&quot; and certificate leaf[subject.CN] = &quot;BlahGeek&apos;s Self-Signed App&quot;</string>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
@@ -13,6 +13,6 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleIdentifier</key>
-	<string>blahgeek.TunetISATAPHelper</string>
+	<string>com.blahgeek.TunetISATAPHelper</string>
 </dict>
 </plist>

@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4EAAB60954394EE19E108D5A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAE248EF4E646BEB26733DF /* libPods.a */; };
-		DA600001194F26DD00BAC48F /* blahgeek.TunetISATAPHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA60FFF3194F120300BAC48F /* blahgeek.TunetISATAPHelper */; };
+		DA1193C61952656900D2676E /* com.blahgeek.TunetISATAPHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA60FFF3194F120300BAC48F /* com.blahgeek.TunetISATAPHelper */; };
+		DA1193C91952678400D2676E /* TunetISATAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1193C81952678400D2676E /* TunetISATAPHelper.m */; };
 		DA60FFDF194DBBF200BAC48F /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFDD194DBBF200BAC48F /* Preferences.m */; };
 		DA60FFE0194DBBF200BAC48F /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA60FFDE194DBBF200BAC48F /* Preferences.xib */; };
 		DA60FFE6194E83E000BAC48F /* PDKeychainBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFE3194E83E000BAC48F /* PDKeychainBindings.m */; };
@@ -57,13 +58,16 @@
 			dstPath = Contents/Library/LaunchServices;
 			dstSubfolderSpec = 1;
 			files = (
-				DA600001194F26DD00BAC48F /* blahgeek.TunetISATAPHelper in CopyFiles */,
+				DA1193C61952656900D2676E /* com.blahgeek.TunetISATAPHelper in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DA1193C51952643B00D2676E /* iTHUNet-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iTHUNet-Prefix.pch"; sourceTree = "<group>"; };
+		DA1193C71952678400D2676E /* TunetISATAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TunetISATAPHelper.h; sourceTree = "<group>"; };
+		DA1193C81952678400D2676E /* TunetISATAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TunetISATAPHelper.m; sourceTree = "<group>"; };
 		DA60FFDC194DBBF200BAC48F /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
 		DA60FFDD194DBBF200BAC48F /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
 		DA60FFDE194DBBF200BAC48F /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
@@ -75,20 +79,19 @@
 		DA60FFEA194E904E00BAC48F /* TunetLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TunetLogin.m; sourceTree = "<group>"; };
 		DA60FFEC194EB0D800BAC48F /* TunetNetworkUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TunetNetworkUtils.h; sourceTree = "<group>"; };
 		DA60FFED194EB0D800BAC48F /* TunetNetworkUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TunetNetworkUtils.m; sourceTree = "<group>"; };
-		DA60FFF3194F120300BAC48F /* blahgeek.TunetISATAPHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = blahgeek.TunetISATAPHelper; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA60FFF3194F120300BAC48F /* com.blahgeek.TunetISATAPHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = com.blahgeek.TunetISATAPHelper; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA60FFF5194F120300BAC48F /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		DA60FFF7194F120300BAC48F /* TunetISATAPHelper.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = TunetISATAPHelper.1; sourceTree = "<group>"; };
 		DA60FFFC194F172800BAC48F /* com.blahgeek.TunetISATAPHelper.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = com.blahgeek.TunetISATAPHelper.plist; sourceTree = "<group>"; };
 		DA60FFFE194F1BF200BAC48F /* TunetISATAPHelper-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TunetISATAPHelper-Info.plist"; sourceTree = "<group>"; };
-		DA70E0F8194C386B00540D41 /* AutoISATAP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoISATAP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA70E0F8194C386B00540D41 /* iTHUNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTHUNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA70E0FB194C386B00540D41 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		DA70E0FE194C386B00540D41 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		DA70E0FF194C386B00540D41 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DA70E100194C386B00540D41 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		DA70E103194C386B00540D41 /* AutoISATAP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AutoISATAP-Info.plist"; sourceTree = "<group>"; };
+		DA70E103194C386B00540D41 /* iTHUNet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iTHUNet-Info.plist"; sourceTree = "<group>"; };
 		DA70E105194C386B00540D41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DA70E107194C386B00540D41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DA70E109194C386B00540D41 /* AutoISATAP-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AutoISATAP-Prefix.pch"; sourceTree = "<group>"; };
 		DA70E10B194C386B00540D41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		DA70E10D194C386B00540D41 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DA70E10E194C386B00540D41 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -158,7 +161,7 @@
 		DA70E0EF194C386B00540D41 = {
 			isa = PBXGroup;
 			children = (
-				DA70E101194C386B00540D41 /* AutoISATAP */,
+				DA70E101194C386B00540D41 /* iTHUNet */,
 				DA70E11F194C386C00540D41 /* AutoISATAPTests */,
 				DA60FFF4194F120300BAC48F /* TunetISATAPHelper */,
 				DA70E0FA194C386B00540D41 /* Frameworks */,
@@ -170,9 +173,9 @@
 		DA70E0F9194C386B00540D41 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DA70E0F8194C386B00540D41 /* AutoISATAP.app */,
+				DA70E0F8194C386B00540D41 /* iTHUNet.app */,
 				DA70E119194C386C00540D41 /* AutoISATAPTests.xctest */,
-				DA60FFF3194F120300BAC48F /* blahgeek.TunetISATAPHelper */,
+				DA60FFF3194F120300BAC48F /* com.blahgeek.TunetISATAPHelper */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -199,7 +202,7 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		DA70E101194C386B00540D41 /* AutoISATAP */ = {
+		DA70E101194C386B00540D41 /* iTHUNet */ = {
 			isa = PBXGroup;
 			children = (
 				DA60FFE8194E83E800BAC48F /* PDKeychainBindings */,
@@ -214,18 +217,21 @@
 				DA60FFDD194DBBF200BAC48F /* Preferences.m */,
 				DA60FFDE194DBBF200BAC48F /* Preferences.xib */,
 				DA70E113194C386B00540D41 /* Images.xcassets */,
+				DA1193C71952678400D2676E /* TunetISATAPHelper.h */,
+				DA1193C81952678400D2676E /* TunetISATAPHelper.m */,
 				DA70E102194C386B00540D41 /* Supporting Files */,
 			);
+			name = iTHUNet;
 			path = AutoISATAP;
 			sourceTree = "<group>";
 		};
 		DA70E102194C386B00540D41 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DA70E103194C386B00540D41 /* AutoISATAP-Info.plist */,
+				DA70E103194C386B00540D41 /* iTHUNet-Info.plist */,
 				DA70E104194C386B00540D41 /* InfoPlist.strings */,
 				DA70E107194C386B00540D41 /* main.m */,
-				DA70E109194C386B00540D41 /* AutoISATAP-Prefix.pch */,
+				DA1193C51952643B00D2676E /* iTHUNet-Prefix.pch */,
 				DA70E10A194C386B00540D41 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
@@ -266,12 +272,12 @@
 			);
 			name = TunetISATAPHelper;
 			productName = TunetISATAPHelper;
-			productReference = DA60FFF3194F120300BAC48F /* blahgeek.TunetISATAPHelper */;
+			productReference = DA60FFF3194F120300BAC48F /* com.blahgeek.TunetISATAPHelper */;
 			productType = "com.apple.product-type.tool";
 		};
-		DA70E0F7194C386B00540D41 /* AutoISATAP */ = {
+		DA70E0F7194C386B00540D41 /* iTHUNet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DA70E129194C386C00540D41 /* Build configuration list for PBXNativeTarget "AutoISATAP" */;
+			buildConfigurationList = DA70E129194C386C00540D41 /* Build configuration list for PBXNativeTarget "iTHUNet" */;
 			buildPhases = (
 				057052B1F6674F76883AD848 /* Check Pods Manifest.lock */,
 				DA70E0F4194C386B00540D41 /* Sources */,
@@ -284,9 +290,9 @@
 			);
 			dependencies = (
 			);
-			name = AutoISATAP;
+			name = iTHUNet;
 			productName = AutoISATAP;
-			productReference = DA70E0F8194C386B00540D41 /* AutoISATAP.app */;
+			productReference = DA70E0F8194C386B00540D41 /* iTHUNet.app */;
 			productType = "com.apple.product-type.application";
 		};
 		DA70E118194C386C00540D41 /* AutoISATAPTests */ = {
@@ -334,7 +340,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DA70E0F7194C386B00540D41 /* AutoISATAP */,
+				DA70E0F7194C386B00540D41 /* iTHUNet */,
 				DA70E118194C386C00540D41 /* AutoISATAPTests */,
 				DA60FFF2194F120300BAC48F /* TunetISATAPHelper */,
 			);
@@ -410,6 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA1193C91952678400D2676E /* TunetISATAPHelper.m in Sources */,
 				DA70E10F194C386B00540D41 /* AppDelegate.m in Sources */,
 				DA60FFE6194E83E000BAC48F /* PDKeychainBindings.m in Sources */,
 				DA70E108194C386B00540D41 /* main.m in Sources */,
@@ -433,7 +440,7 @@
 /* Begin PBXTargetDependency section */
 		DA70E11E194C386C00540D41 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DA70E0F7194C386B00540D41 /* AutoISATAP */;
+			target = DA70E0F7194C386B00540D41 /* iTHUNet */;
 			targetProxy = DA70E11D194C386C00540D41 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -492,7 +499,7 @@
 					__launchd_plist,
 					TunetISATAPHelper/com.blahgeek.TunetISATAPHelper.plist,
 				);
-				PRODUCT_NAME = "blahgeek.$(TARGET_NAME)";
+				PRODUCT_NAME = "com.blahgeek.$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
@@ -510,7 +517,7 @@
 					__launchd_plist,
 					TunetISATAPHelper/com.blahgeek.TunetISATAPHelper.plist,
 				);
-				PRODUCT_NAME = "blahgeek.$(TARGET_NAME)";
+				PRODUCT_NAME = "com.blahgeek.$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -592,8 +599,8 @@
 				CODE_SIGN_IDENTITY = "BlahGeek's Self-Signed App";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AutoISATAP/AutoISATAP-Prefix.pch";
-				INFOPLIST_FILE = "AutoISATAP/AutoISATAP-Info.plist";
+				GCC_PREFIX_HEADER = "AutoISATAP/iTHUNet-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/AutoISATAP/iTHUNet-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -607,8 +614,8 @@
 				CODE_SIGN_IDENTITY = "BlahGeek's Self-Signed App";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AutoISATAP/AutoISATAP-Prefix.pch";
-				INFOPLIST_FILE = "AutoISATAP/AutoISATAP-Info.plist";
+				GCC_PREFIX_HEADER = "AutoISATAP/iTHUNet-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/AutoISATAP/iTHUNet-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -664,6 +671,7 @@
 				DA60FFFB194F120300BAC48F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA70E0F3194C386B00540D41 /* Build configuration list for PBXProject "iTHUNet" */ = {
 			isa = XCConfigurationList;
@@ -674,7 +682,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DA70E129194C386C00540D41 /* Build configuration list for PBXNativeTarget "AutoISATAP" */ = {
+		DA70E129194C386C00540D41 /* Build configuration list for PBXNativeTarget "iTHUNet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA70E12A194C386C00540D41 /* Debug */,
