@@ -60,6 +60,8 @@ static NSDictionary * defaultValues() {
     [TunetISATAPHelper installHelper];
     [self.tunetLogin reset];
     [self.tunetLogin updateMenuItem];
+    
+    [self.tunetLogin doLoginFromUserCmd:NO]; // login at startup
 }
 
 - (void) awakeFromNib {
