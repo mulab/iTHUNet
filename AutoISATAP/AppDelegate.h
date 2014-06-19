@@ -14,6 +14,7 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
     GCNetworkReachability * reachv4;
     GCNetworkReachability * reachv6;
+    NSImage * statusBarIcon;
 }
 
 @property (assign) IBOutlet NSWindow *window;

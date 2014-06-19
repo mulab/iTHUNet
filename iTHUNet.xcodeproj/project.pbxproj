@@ -10,6 +10,7 @@
 		4EAAB60954394EE19E108D5A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAE248EF4E646BEB26733DF /* libPods.a */; };
 		DA1193C61952656900D2676E /* com.blahgeek.TunetISATAPHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA60FFF3194F120300BAC48F /* com.blahgeek.TunetISATAPHelper */; };
 		DA1193C91952678400D2676E /* TunetISATAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1193C81952678400D2676E /* TunetISATAPHelper.m */; };
+		DA1193CE1952B4F600D2676E /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1193CD1952B4F600D2676E /* icon-small.png */; };
 		DA60FFDF194DBBF200BAC48F /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFDD194DBBF200BAC48F /* Preferences.m */; };
 		DA60FFE0194DBBF200BAC48F /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA60FFDE194DBBF200BAC48F /* Preferences.xib */; };
 		DA60FFE6194E83E000BAC48F /* PDKeychainBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFE3194E83E000BAC48F /* PDKeychainBindings.m */; };
@@ -68,6 +69,7 @@
 		DA1193C51952643B00D2676E /* iTHUNet-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iTHUNet-Prefix.pch"; sourceTree = "<group>"; };
 		DA1193C71952678400D2676E /* TunetISATAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TunetISATAPHelper.h; sourceTree = "<group>"; };
 		DA1193C81952678400D2676E /* TunetISATAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TunetISATAPHelper.m; sourceTree = "<group>"; };
+		DA1193CD1952B4F600D2676E /* icon-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-small.png"; path = "../icon-small.png"; sourceTree = "<group>"; };
 		DA60FFDC194DBBF200BAC48F /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
 		DA60FFDD194DBBF200BAC48F /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
 		DA60FFDE194DBBF200BAC48F /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 		DA70E102194C386B00540D41 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DA1193CD1952B4F600D2676E /* icon-small.png */,
 				DA70E103194C386B00540D41 /* iTHUNet-Info.plist */,
 				DA70E104194C386B00540D41 /* InfoPlist.strings */,
 				DA70E107194C386B00540D41 /* main.m */,
@@ -356,6 +359,7 @@
 				DA70E114194C386B00540D41 /* Images.xcassets in Resources */,
 				DA70E10C194C386B00540D41 /* Credits.rtf in Resources */,
 				DA70E112194C386B00540D41 /* MainMenu.xib in Resources */,
+				DA1193CE1952B4F600D2676E /* icon-small.png in Resources */,
 				DA60FFE0194DBBF200BAC48F /* Preferences.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
