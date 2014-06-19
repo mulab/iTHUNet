@@ -73,9 +73,7 @@
 		DA1193C71952678400D2676E /* TunetISATAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TunetISATAPHelper.h; sourceTree = "<group>"; };
 		DA1193C81952678400D2676E /* TunetISATAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TunetISATAPHelper.m; sourceTree = "<group>"; };
 		DA1193CD1952B4F600D2676E /* icon-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-small.png"; path = "../icon-small.png"; sourceTree = "<group>"; };
-		DA1193CF1952B6ED00D2676E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.strings"; sourceTree = "<group>"; };
 		DA1193D01952B6ED00D2676E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		DA1193D11952B6ED00D2676E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hans"; path = "zh-Hans.lproj/Credits.rtf"; sourceTree = "<group>"; };
 		DA1193D21952B6ED00D2676E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		DA1193D61952B87400D2676E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Preferences.xib; sourceTree = "<group>"; };
 		DA1193D71952B88400D2676E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Preferences.strings"; sourceTree = "<group>"; };
@@ -83,6 +81,8 @@
 		DA1193DC1952C1BD00D2676E /* LaunchAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LaunchAtLoginController.h; path = ../LaunchAtLoginController.h; sourceTree = "<group>"; };
 		DA1193DD1952C1BD00D2676E /* LaunchAtLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LaunchAtLoginController.m; path = ../LaunchAtLoginController.m; sourceTree = "<group>"; };
 		DA1193DE1952C1BD00D2676E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		DA1193E21952C3A800D2676E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Base; path = Base.lproj/Credits.rtf; sourceTree = "<group>"; };
+		DA1193E41952C5F400D2676E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.strings"; sourceTree = "<group>"; };
 		DA60FFDC194DBBF200BAC48F /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
 		DA60FFDD194DBBF200BAC48F /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
 		DA60FFE2194E83E000BAC48F /* PDKeychainBindings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindings.h; sourceTree = "<group>"; };
@@ -106,7 +106,6 @@
 		DA70E103194C386B00540D41 /* iTHUNet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iTHUNet-Info.plist"; sourceTree = "<group>"; };
 		DA70E105194C386B00540D41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DA70E107194C386B00540D41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DA70E10B194C386B00540D41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		DA70E10D194C386B00540D41 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DA70E10E194C386B00540D41 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DA70E111194C386B00540D41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -499,8 +498,7 @@
 		DA70E10A194C386B00540D41 /* Credits.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DA70E10B194C386B00540D41 /* en */,
-				DA1193D11952B6ED00D2676E /* zh-Hans */,
+				DA1193E21952C3A800D2676E /* Base */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
@@ -509,7 +507,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				DA70E111194C386B00540D41 /* Base */,
-				DA1193CF1952B6ED00D2676E /* zh-Hans */,
+				DA1193E41952C5F400D2676E /* zh-Hans */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";

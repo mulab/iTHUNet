@@ -143,6 +143,9 @@
 /* Class = "NSMenuItem"; title = "\tLeft to Right"; ObjectID = "Lbh-J2-qVU"; */
 "Lbh-J2-qVU.title" = "\tLeft to Right";
 
+/* Class = "NSMenuItem"; title = "About iTHUNet"; ObjectID = "MBe-TI-ikR"; */
+"MBe-TI-ikR.title" = "关于iTHUNet";
+
 /* Class = "NSMenuItem"; title = "Copy Ruler"; ObjectID = "MkV-Pr-PK5"; */
 "MkV-Pr-PK5.title" = "Copy Ruler";
 
@@ -263,7 +266,7 @@
 /* Class = "NSMenuItem"; title = "Use None"; ObjectID = "cDB-IK-hbR"; */
 "cDB-IK-hbR.title" = "Use None";
 
-/* Class = "NSMenuItem"; title = "Login Now"; ObjectID = "cXp-iw-ErH"; */
+/* Class = "NSMenuItem"; title = "现在登录"; ObjectID = "cXp-iw-ErH"; */
 "cXp-iw-ErH.title" = "现在登录";
 
 /* Class = "NSMenuItem"; title = "Selection"; ObjectID = "cqv-fj-IhA"; */
@@ -284,7 +287,7 @@
 /* Class = "NSMenuItem"; title = "Undo"; ObjectID = "dRJ-4n-Yzg"; */
 "dRJ-4n-Yzg.title" = "Undo";
 
-/* Class = "NSMenuItem"; title = "Quit"; ObjectID = "dsi-t4-daJ"; */
+/* Class = "NSMenuItem"; title = "退出"; ObjectID = "dsi-t4-daJ"; */
 "dsi-t4-daJ.title" = "退出";
 
 /* Class = "NSMenuItem"; title = "Login Status"; ObjectID = "eI9-7y-Cc9"; */
@@ -317,7 +320,7 @@
 /* Class = "NSMenuItem"; title = "Format"; ObjectID = "jxT-CU-nIS"; */
 "jxT-CU-nIS.title" = "Format";
 
-/* Class = "NSMenuItem"; title = "Preferences"; ObjectID = "kY8-7f-N5U"; */
+/* Class = "NSMenuItem"; title = "偏好设置"; ObjectID = "kY8-7f-N5U"; */
 "kY8-7f-N5U.title" = "偏好设置";
 
 /* Class = "NSMenuItem"; title = "Check Grammar With Spelling"; ObjectID = "mK6-2p-4JG"; */

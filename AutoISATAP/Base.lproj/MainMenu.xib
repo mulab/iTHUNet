@@ -688,6 +688,12 @@
                         <action selector="showWindow:" target="QL7-JF-3GD" id="JaL-tg-AtS"/>
                     </connections>
                 </menuItem>
+                <menuItem title="About iTHUNet" id="MBe-TI-ikR">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="orderFrontStandardAboutPanel:" target="-1" id="naC-cq-jab"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Quit" keyEquivalent="q" id="dsi-t4-daJ">
                     <connections>
                         <action selector="terminate:" target="-3" id="XJ5-WY-fy4"/>
