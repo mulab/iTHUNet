@@ -17,15 +17,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include <sysexits.h>
 #include <unistd.h>
 #include <Security/Security.h>
 
 void exit_error(const char *message, const int error) __attribute__((noreturn));
 int listen_to_launchd_sockets();
+void log_time();
 
 int main(int argc, const char * argv[])
 {
+    log_time();
+    printf("I'm running...\n");
     int kernel_queue = listen_to_launchd_sockets();
     
     struct kevent listening_event;
@@ -42,23 +46,39 @@ int main(int argc, const char * argv[])
     if (accepted_socket == -1) {
         exit_error("couldn't accept the socket connection", errno);
     }
+    log_time();
+    printf("Socket accepted, recving command...\n");
     
-    char recv_cmd[1024];
-    ssize_t recv_cmd_len = recv(accepted_socket, recv_cmd, 1023, 0);
-    recv_cmd[recv_cmd_len] = '\0';
-    
-    FILE * popen_file = popen(recv_cmd, "r");
-    if(popen_file == NULL) exit_error("Error when popen", errno);
-    
-    char fgets_str[1024];
-    while(fgets(fgets_str, 1023, popen_file) != NULL) {
+    while(true) {
+        
+        char recv_cmd[1024];
+        ssize_t recv_cmd_len = recv(accepted_socket, recv_cmd, 1023, 0);
+        if(recv_cmd_len < 2) {
+            printf("No more command, return");
+            break;
+        }
+        log_time();
+        printf("Got command:%s\n", recv_cmd);
+        
+        FILE * popen_file = popen(recv_cmd, "r");
+        if(popen_file == NULL) exit_error("Error when popen", errno);
+        
+        char fgets_str[4096];
+        if(fgets(fgets_str, 4000, popen_file) == NULL)
+            fgets_str[0] = '\0';
         unsigned long fgets_str_len = strlen(fgets_str);
-        ssize_t send_len = send(accepted_socket, fgets_str, fgets_str_len, 0);
-        if(send_len < fgets_str_len)
-            exit_error("Error when writing to socket", errno);
+        fgets_str[fgets_str_len] = '\n';
+        fgets_str[fgets_str_len+1] = '\0';
+        fgets_str_len += 1;
+        send(accepted_socket, fgets_str, fgets_str_len, 0);
+        
+        log_time();
+        printf("Done, return\n");
+        
+        pclose(popen_file);
+        
     }
-    
-    pclose(popen_file);
+
     close(accepted_socket);
     close(kernel_queue);
 
@@ -112,4 +132,10 @@ int listen_to_launchd_sockets() {
     }
     launch_data_free(checkin_result);
     return kernel_queue;
+}
+
+void log_time() {
+    time_t t;
+    time(&t);
+    printf("[%s] ", ctime(&t));
 }

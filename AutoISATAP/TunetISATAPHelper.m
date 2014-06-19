@@ -54,50 +54,57 @@
         NSString * msg = [NSString stringWithFormat:@"couldn't install privileged helper: %@", (__bridge id)errorString];
         CFRelease(errorString);
         return [NSError errorWithDomain:@"installHelper" code:0
-                               userInfo:[NSDictionary dictionaryWithObject:msg forKey:NSLocalizedDescriptionKey]];
+                               userInfo:[NSDictionary dictionaryWithObject:msg
+                                                                    forKey:NSLocalizedDescriptionKey]];
     }
     return nil;
 }
 
-+ (NSString *) runCommand: (NSString *)cmd {
-    int socket_descriptor = socket(PF_LOCAL, SOCK_STREAM, 0);
-    if (socket_descriptor == -1) {
+- (BOOL) start {
+    NSLog(@"Start connection to helper...");
+    self.sock = socket(PF_LOCAL, SOCK_STREAM, 0);
+    if (self.sock == -1) {
         NSLog(@"error creating socket: %s", strerror(errno));
-        return nil;
+        return NO;
     }
     struct sockaddr_un address = {
         .sun_family = PF_LOCAL,
         .sun_path = HELPER_SOCKET,
     };
-    NSMutableString * ret = [NSMutableString stringWithString:@""];
-    if (connect(socket_descriptor, (const struct sockaddr *)&address, sizeof(address)) != 0) {
+    if (connect(self.sock, (const struct sockaddr *)&address, sizeof(address)) != 0) {
         NSLog(@"error connecting to socket: %s", strerror(errno));
-        ret = nil;
-        goto done;
+        if(self.sock != 0) close(self.sock);
+        return NO;
     }
+    return YES;
+}
+
+- (void) end {
+    NSLog(@"Closing connection to helper...");
+    if(self.sock > 0) close(self.sock);
+    self.sock = -1;
+}
+
+- (NSString *) runCommand: (NSString *)cmd {
+    if(self.sock <= 0) return nil;
+    NSLog(@"Running command: `%@`", cmd);
+    char command[1024];
+    [cmd getCString:command maxLength:1023 encoding:NSUTF8StringEncoding];
+    unsigned long command_len = strlen(command);
     //send the command
-    size_t bytes_written = send(socket_descriptor,
-                                [cmd cStringUsingEncoding:NSUTF8StringEncoding],
-                                [cmd length], 0);
-    if (bytes_written != [cmd length]) {
+    size_t bytes_written = send(self.sock, command, command_len, 0);
+    if (bytes_written != command_len) {
         NSLog(@"couldn't write to socket: %s", strerror(errno));
-        ret = nil;
-        goto done;
+        return nil;
     }
-    size_t bytes_read = 0;
     char *buffer = malloc(4096);
-    while((bytes_read = recv(socket_descriptor, buffer, 4096, 0)) > 0) {
-        NSString *content =
-        [[NSString alloc] initWithBytes: buffer length: bytes_read encoding: NSUTF8StringEncoding];
-        NSLog(@"Got: %@", content);
-        [ret appendString:content];
-    }
     
+    NSLog(@"Waiting for recv...");
+    size_t bytes_read = recv(self.sock, buffer, 4095, 0);
+    NSString * ret = [[NSString alloc] initWithBytes: buffer length: bytes_read encoding: NSUTF8StringEncoding];
+    NSLog(@"Recv: %zu bytes: %@", bytes_read, ret);
     free(buffer);
-done:
-    if (socket_descriptor != -1) {
-        close(socket_descriptor);
-    }
+
     return ret;
 }
 

@@ -14,6 +14,11 @@
 @interface TunetISATAPHelper : NSObject
 
 + (NSError *) installHelper;
-+ (NSString *) runCommand: (NSString *)cmd;
+
+@property int sock;
+
+- (BOOL) start;
+- (void) end;
+- (NSString *) runCommand: (NSString *)cmd;
 
 @end

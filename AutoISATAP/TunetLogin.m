@@ -13,6 +13,7 @@
 #import "TunetNetworkUtils.h"
 #import <CoreWLAN/CoreWLAN.h>
 #import "NSURL+QueryDictionary.h"
+#import "TunetISATAPHelper.h"
 
 #define TUNET_LOGIN_URL "http://net.tsinghua.edu.cn/cgi-bin/do_login"
 #define TUNET_LOCATION_URL "http://location.sip6.edu.cn:9090/lbs/getStationLocationJSON/"
@@ -63,6 +64,11 @@
         NSLog(@"showNotification Disabled");
         return;
     }
+    if([[NSUserDefaults standardUserDefaults] integerForKey:@"enableAutoLogin"] == NSOffState &&
+       [[NSUserDefaults standardUserDefaults] integerForKey:@"enableAutoISATAP"] == NSOffState) {
+        NSLog(@"Nothing to notify");
+        return;
+    }
     NSUserNotification * noti = [[NSUserNotification alloc] init];
     noti.title = @"iTHUNet Auto Login";
     noti.soundName = NSUserNotificationDefaultSoundName;
@@ -97,7 +103,30 @@
         NSLog(@"ISATAP Disabled, continue.");
         return [self doFinish];
     }
-    // TODO
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    NSString * ip = nil;
+    for(NSString * ipaddr in [[NSHost currentHost] addresses]) {
+        NSLog(@"Got local IP: %@, checking...", ipaddr);
+        if([TunetNetworkUtils checkIPInNetworks:[defaults arrayForKey:@"enabledISATAPNetworks"] forIP:ipaddr]) {
+            NSLog(@"Match! Use this one.");
+            ip = ipaddr;
+            break;
+        }
+    }
+    TunetISATAPHelper * helper = [[TunetISATAPHelper alloc] init];
+    [helper start];
+    [TunetNetworkUtils destroyInterfaceWithHelper:helper];
+    if(ip == nil){
+        NSLog(@"No valid IP found for ISATAP, destroy it");
+        self.isatapStatus = TunetStatusInit;
+        return [self doFinish];
+    }
+    [TunetNetworkUtils createInterfaceForIP:ip
+                                  atGateway:[defaults stringForKey:@"isatapGateway"]
+                             withLinkPrefix:[defaults stringForKey:@"isatapLinkPrefix"]
+                            andGlobalPrefix:[defaults stringForKey:@"isatapPrefix"]
+                                 withHelper:helper];
+    [helper end];
     self.isatapStatus = TunetStatusOK;
     return [self doFinish];
 }
@@ -155,6 +184,11 @@
     NSString * password = [[PDKeychainBindings sharedKeychainBindings] stringForKey:@"loginPassword"];
     NSString * username = [[NSUserDefaults standardUserDefaults] stringForKey:@"loginUsername"];
     NSLog(@"Before login, Username: %@, Password: %@", username, password);
+    if (!username || !password) {
+        NSLog(@"Username/Password is null, goto isatap");
+        [self doISATAP];
+        return;
+    }
     
     __unsafe_unretained __block ASIFormDataRequest * request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@TUNET_LOGIN_URL]];
     [request setTimeOutSeconds: 1];

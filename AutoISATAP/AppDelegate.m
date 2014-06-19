@@ -23,6 +23,9 @@ static NSDictionary * defaultValues() {
                @"enabledISATAPNetworks": @[@{@"network": @"59.66.0.0", @"prefixlen": @"16"},
                                            @{@"network": @"166.111.0.0", @"prefixlen": @"16"},
                                            @{@"network": @"101.5.0.0", @"prefixlen": @"16"}],
+               @"isatapGateway": @"166.111.21.1",
+               @"isatapPrefix": @"2402:f000:1:1501:200:5efe",
+               @"isatapLinkPrefix": @"fe80::200:5efe",
                };
     return values;
 }
@@ -65,9 +68,7 @@ static NSDictionary * defaultValues() {
 }
 
 - (IBAction)itemClickFrom:(NSMenuItem *)sender {
-    NSString * command = @"/usr/bin/touch /42.txt";
     NSLog(@"Click from %@", sender);
-    [TunetISATAPHelper runCommand:command];
 }
 
 @end
