@@ -47,4 +47,5 @@
     [self.shownPasswordField setHidden:(!show)];
     [self.passwordField setHidden:show];
 }
+
 @end

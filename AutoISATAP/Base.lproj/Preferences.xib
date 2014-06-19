@@ -39,6 +39,9 @@
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <binding destination="0gV-2g-PGa" name="value" keyPath="launchAtLogin" id="OEC-PS-Ssy"/>
+                                            </connections>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sSy-gi-HHk">
                                             <rect key="frame" x="38" y="220" width="184" height="18"/>
@@ -345,5 +348,6 @@
                 </binding>
             </connections>
         </arrayController>
+        <customObject id="0gV-2g-PGa" customClass="LaunchAtLoginController"/>
     </objects>
 </document>

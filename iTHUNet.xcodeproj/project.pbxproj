@@ -13,6 +13,8 @@
 		DA1193CE1952B4F600D2676E /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1193CD1952B4F600D2676E /* icon-small.png */; };
 		DA1193D31952B86500D2676E /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA1193D51952B86500D2676E /* Preferences.xib */; };
 		DA1193DB1952BEEA00D2676E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA1193DA1952BEEA00D2676E /* Localizable.strings */; };
+		DA1193DF1952C1BD00D2676E /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1193DD1952C1BD00D2676E /* LaunchAtLoginController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DA1193E01952C1BD00D2676E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DA1193DE1952C1BD00D2676E /* README.md */; };
 		DA60FFDF194DBBF200BAC48F /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFDD194DBBF200BAC48F /* Preferences.m */; };
 		DA60FFE6194E83E000BAC48F /* PDKeychainBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFE3194E83E000BAC48F /* PDKeychainBindings.m */; };
 		DA60FFE7194E83E000BAC48F /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA60FFE5194E83E000BAC48F /* PDKeychainBindingsController.m */; };
@@ -78,6 +80,9 @@
 		DA1193D61952B87400D2676E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Preferences.xib; sourceTree = "<group>"; };
 		DA1193D71952B88400D2676E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Preferences.strings"; sourceTree = "<group>"; };
 		DA1193DA1952BEEA00D2676E /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		DA1193DC1952C1BD00D2676E /* LaunchAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LaunchAtLoginController.h; path = ../LaunchAtLoginController.h; sourceTree = "<group>"; };
+		DA1193DD1952C1BD00D2676E /* LaunchAtLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LaunchAtLoginController.m; path = ../LaunchAtLoginController.m; sourceTree = "<group>"; };
+		DA1193DE1952C1BD00D2676E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DA60FFDC194DBBF200BAC48F /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
 		DA60FFDD194DBBF200BAC48F /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
 		DA60FFE2194E83E000BAC48F /* PDKeychainBindings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindings.h; sourceTree = "<group>"; };
@@ -145,6 +150,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA1193E11952C1C400D2676E /* LaunchAtLoginController */ = {
+			isa = PBXGroup;
+			children = (
+				DA1193DC1952C1BD00D2676E /* LaunchAtLoginController.h */,
+				DA1193DD1952C1BD00D2676E /* LaunchAtLoginController.m */,
+				DA1193DE1952C1BD00D2676E /* README.md */,
+			);
+			name = LaunchAtLoginController;
+			sourceTree = "<group>";
+		};
 		DA60FFE8194E83E800BAC48F /* PDKeychainBindings */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +229,7 @@
 		DA70E101194C386B00540D41 /* iTHUNet */ = {
 			isa = PBXGroup;
 			children = (
+				DA1193E11952C1C400D2676E /* LaunchAtLoginController */,
 				DA60FFE8194E83E800BAC48F /* PDKeychainBindings */,
 				DA60FFEC194EB0D800BAC48F /* TunetNetworkUtils.h */,
 				DA60FFED194EB0D800BAC48F /* TunetNetworkUtils.m */,
@@ -370,6 +386,7 @@
 				DA1193DB1952BEEA00D2676E /* Localizable.strings in Resources */,
 				DA70E112194C386B00540D41 /* MainMenu.xib in Resources */,
 				DA1193CE1952B4F600D2676E /* icon-small.png in Resources */,
+				DA1193E01952C1BD00D2676E /* README.md in Resources */,
 				DA1193D31952B86500D2676E /* Preferences.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA1193DF1952C1BD00D2676E /* LaunchAtLoginController.m in Sources */,
 				DA1193C91952678400D2676E /* TunetISATAPHelper.m in Sources */,
 				DA70E10F194C386B00540D41 /* AppDelegate.m in Sources */,
 				DA60FFE6194E83E000BAC48F /* PDKeychainBindings.m in Sources */,
