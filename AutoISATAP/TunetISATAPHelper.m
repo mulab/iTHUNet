@@ -93,8 +93,12 @@
 }
 
 - (NSString *) runCommand: (NSString *)cmd {
-    if(self.sock <= 0) return nil;
     NSLog(@"Running command: `%@`", cmd);
+    if(self.sock < 0){
+        NSLog(@"Socket not good, return.");
+        self.error = [NSError errorWithDomain:@"helperError" code:0 userInfo:nil];
+        return nil;
+    }
     char command[1024];
     [cmd getCString:command maxLength:1023 encoding:NSUTF8StringEncoding];
     unsigned long command_len = strlen(command);
