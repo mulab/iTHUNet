@@ -77,7 +77,7 @@
     if (connect(self.sock, (const struct sockaddr *)&address, sizeof(address)) != 0) {
         NSLog(@"error connecting to socket: %s", strerror(errno));
         self.error = [NSError errorWithDomain:@"helperError" code:1 userInfo:nil];
-        if(self.sock > 0){
+        if(self.sock >= 0){
             close(self.sock);
             self.sock = -1;
         }
@@ -88,7 +88,7 @@
 
 - (void) end {
     NSLog(@"Closing connection to helper...");
-    if(self.sock > 0) close(self.sock);
+    if(self.sock >= 0) close(self.sock);
     self.sock = -1;
 }
 
