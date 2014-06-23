@@ -7,7 +7,7 @@
 		<string>identifier &quot;com.blahgeek.iTHUNet&quot; and certificate leaf[subject.CN] = &quot;BlahGeek&apos;s Self-Signed App&quot;</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>1.1</string>
 	<key>CFBundleName</key>
 	<string>TunetISATAPHelper</string>
 	<key>CFBundleInfoDictionaryVersion</key>

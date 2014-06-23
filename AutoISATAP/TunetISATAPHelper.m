@@ -16,14 +16,41 @@
 
 @implementation TunetISATAPHelper
 
++ (BOOL) needToInstallHelperTool: (NSString *)jobLabel {
+    NSDictionary* helperJob = (__bridge NSDictionary *)SMJobCopyDictionary(kSMDomainSystemLaunchd, (__bridge CFStringRef)jobLabel);
+    if(!helperJob) {
+        NSLog(@"Helper job not exists, will install it");
+        return YES;
+    }
+//    NSLog(@"Helper job already installed: %@", helperJob);
+    NSString * path = [[helperJob objectForKey:@"ProgramArguments"] objectAtIndex:0];
+    NSURL * pathURL = [NSURL fileURLWithPath:path];
+//    NSLog(@"Installed Path: %@", pathURL);
+    NSDictionary * infoPlist = (__bridge NSDictionary *)CFBundleCopyInfoDictionaryForURL((__bridge CFURLRef)pathURL);
+    NSString * installedVersion = [infoPlist objectForKey:@"CFBundleVersion"];
+    NSLog(@"Installed version: %@", installedVersion);
+    
+    NSURL * appBundleURL = [[NSBundle mainBundle] bundleURL];
+    NSString * tmp = [NSString stringWithFormat:@"Contents/Library/LaunchServices/%@", jobLabel];
+    NSURL * currentHelperToolURL = [appBundleURL URLByAppendingPathComponent:tmp];
+    NSDictionary * currentInfoPlist = (__bridge NSDictionary *)CFBundleCopyInfoDictionaryForURL((__bridge CFURLRef)currentHelperToolURL);
+    NSString * currentVersion = [currentInfoPlist objectForKey:@"CFBundleVersion"];
+    NSLog(@"Current version: %@", currentVersion);
+    
+    if([currentVersion isEqualToString:installedVersion]) {
+        NSLog(@"Version matchs, will not install.");
+        return NO;
+    }
+    
+    NSLog(@"Version not match, will install");
+    return YES;
+    
+}
+
 + (NSError *) installHelper {
     CFStringRef jobLabel = CFSTR(HELPER_IDENTIFY);
-    CFDictionaryRef helperJob = SMJobCopyDictionary(kSMDomainSystemLaunchd, jobLabel);
-    if(helperJob){
-        NSLog(@"Helper job already exists");
-        CFRelease(helperJob);
+    if(![TunetISATAPHelper needToInstallHelperTool:@HELPER_IDENTIFY])
         return nil;
-    }
     AuthorizationItem authItem = {
         .name = kSMRightBlessPrivilegedHelper,
         .valueLength = 0,

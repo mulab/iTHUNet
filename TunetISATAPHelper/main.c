@@ -49,6 +49,11 @@ int main(int argc, const char * argv[])
     log_time();
     printf("Socket accepted, recving command...\n");
     
+    struct timeval tv;
+    tv.tv_sec = 5; // timeout: 5s
+    tv.tv_usec = 0;
+    setsockopt(accepted_socket, SOL_SOCKET, SO_RCVTIMEO, (char *)&tv, sizeof(tv)); // set timeout
+    
     while(true) {
         
         char recv_cmd[1024];
@@ -138,5 +143,9 @@ int listen_to_launchd_sockets() {
 void log_time() {
     time_t t;
     time(&t);
-    printf("[%s] ", ctime(&t));
+    char str[128];
+    memcpy(str, ctime(&t), 128);
+    unsigned long len = strlen(str);
+    if(len > 0) str[len-1] = '\0'; // it ends with '\n'
+    printf("[%s] ", str);
 }
