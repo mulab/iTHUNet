@@ -144,8 +144,14 @@
 
     // query location
     NSURL * url = [NSURL URLWithString:@TUNET_LOCATION_URL];
-    url = [url uq_URLByAppendingQueryDictionary: @{@"bssid": [[CWInterface interface] bssid],
-                                                   @"mac": [[CWInterface interface] hardwareAddress]}];
+    NSString * bssid = [[CWInterface interface] bssid];
+    NSString * hwaddr = [[CWInterface interface] hardwareAddress];
+    if(!bssid || !hwaddr) {
+        NSLog(@"BSSID or HWAddr not available, not querying location.");
+        return [self doISATAP];
+    }
+    url = [url uq_URLByAppendingQueryDictionary: @{@"bssid": bssid,
+                                                   @"mac": hwaddr}];
     ASIHTTPRequest * request = [ASIHTTPRequest requestWithURL: url];
     [request setTimeOutSeconds: 1];
     __block __unsafe_unretained typeof(request) _request = request;
