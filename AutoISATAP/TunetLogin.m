@@ -8,16 +8,28 @@
 
 #import "TunetLogin.h"
 #import "PDKeychainBindings.h"
-#import "ASIHTTPRequest.h"
-#import "ASIFormDataRequest.h"
+#import "AFNetworking.h"
 #import "TunetNetworkUtils.h"
 #import <CoreWLAN/CoreWLAN.h>
 #import "NSURL+QueryDictionary.h"
 #import "TunetISATAPHelper.h"
 
-#define TUNET_LOGIN_URL "http://net.tsinghua.edu.cn/cgi-bin/do_login"
+#define TUNET_LOGIN_URL "http://net.tsinghua.edu.cn/do_login.php"
 #define TUNET_LOCATION_URL "http://location.sip6.edu.cn:9090/lbs/getStationLocationJSON/"
 
+@interface AFPlaintextResponseSerializer : AFHTTPResponseSerializer
+
+@end
+
+@implementation AFPlaintextResponseSerializer
+
+- (id)responseObjectForResponse:(NSURLResponse *)response data:(NSData *)data error:(NSError *__autoreleasing *)error {
+    [super responseObjectForResponse:response data:data error:error]; //BAD SIDE EFFECTS BAD BUT NECESSARY TO CATCH 500s ETC
+    NSStringEncoding encoding = CFStringConvertEncodingToNSStringEncoding(CFStringConvertIANACharSetNameToEncoding((__bridge CFStringRef)([response textEncodingName] ?: @"utf-8")));
+    return [[NSString alloc] initWithData:data encoding:encoding];
+}
+
+@end
 
 @implementation TunetLogin
 
@@ -143,40 +155,28 @@
     self.loginStatus = TunetStatusOK;
 
     // query location
-    NSURL * url = [NSURL URLWithString:@TUNET_LOCATION_URL];
     NSString * bssid = [[CWInterface interface] bssid];
     NSString * hwaddr = [[CWInterface interface] hardwareAddress];
     if(!bssid || !hwaddr) {
         NSLog(@"BSSID or HWAddr not available, not querying location.");
         return [self doISATAP];
     }
-    url = [url uq_URLByAppendingQueryDictionary: @{@"bssid": bssid,
-                                                   @"mac": hwaddr}];
-    ASIHTTPRequest * request = [ASIHTTPRequest requestWithURL: url];
-    [request setTimeOutSeconds: 1];
-    __block __unsafe_unretained typeof(request) _request = request;
-    void (^completeBlock)(void) = ^{
-        NSError * error = [_request error];
-        if(error) {
-            NSLog(@"Error: %@", error);
-            return [self doISATAP];
-        }
-        NSDictionary * jsonResponse = [NSJSONSerialization JSONObjectWithData:[request responseData]
-                                                                      options:0
-                                                                        error:&error];
-        if(error) {
-            NSLog(@"Json Parse Error: %@", error);
-            return [self doISATAP];
-        }
-        NSDictionary * building = [jsonResponse valueForKey:@"building"];
-        self.locationBuildingName = [building valueForKey:@"name"];
-        self.locationBuildingFloor = [building valueForKey:@"floor"];
-        NSLog(@"Building: %@, %@", self.locationBuildingName, self.locationBuildingFloor);
-        return [self doISATAP];
-    };
-    [request setCompletionBlock:completeBlock];
-    [request setFailedBlock:completeBlock];
-    [request startAsynchronous];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"bssid": bssid,
+                                 @"mac": hwaddr};
+    [manager GET:@TUNET_LOCATION_URL
+      parameters:parameters
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             NSDictionary * building = [responseObject valueForKey:@"building"];
+             self.locationBuildingName = [building valueForKey:@"name"];
+             self.locationBuildingFloor = [building valueForKey:@"floor"];
+             NSLog(@"Building: %@, %@", self.locationBuildingName, self.locationBuildingFloor);
+             return [self doISATAP];
+       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             NSLog(@"Request LocationError: %@", error);
+             return [self doISATAP];
+       }];
 }
 
 - (void)doLoginFromUserCmd: (BOOL)fromUser {
@@ -204,53 +204,57 @@
     if(username == nil) username = @"";
     if(password == nil) password = @"";
     
-    ASIFormDataRequest * request = [ASIFormDataRequest requestWithURL:
-                                    [NSURL URLWithString:@TUNET_LOGIN_URL]];
-    [request setTimeOutSeconds: 1];
-    [request setPostValue:username forKey:@"username"];
-    [request setPostValue:[TunetNetworkUtils md5: password] forKey:@"password"];
-    [request setPostValue:@"100" forKey:@"n"];
-    [request setPostValue:@"0" forKey:@"drop"];
-    [request setPostValue:@"10" forKey:@"type"];
-    
-    __block __unsafe_unretained typeof(request) _request = request;
-    
-    [request setCompletionBlock: ^{
-        NSString * response = [_request responseString];
-        NSLog(@"Response: %@", response);
-        NSError * error = nil;
-        NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:@"\\d+,"
-                                                                                options:0
-                                                                                  error:&error];
-        NSUInteger match = [regex numberOfMatchesInString:response
-                                                  options:0
-                                                    range:NSMakeRange(0, [response length])];
-        if(match == 0) {
-            NSArray * substrings = [response componentsSeparatedByString:@"@"];
-            NSString * errorString = [substrings objectAtIndex:0];
-            NSError * error = [NSError errorWithDomain:@"loginError"
-                                                  code:0
-                                              userInfo:[NSDictionary dictionaryWithObject:NSLocalizedString(errorString, nil)
-                                                                                   forKey:NSLocalizedDescriptionKey]];
-            [self loginDoneWithError:error];
-        } else {
-            [self loginDoneWithError:nil];
-        }
-    }];
-    
-    [request setFailedBlock:^{
-        [self loginDoneWithError:[NSError errorWithDomain:@"loginError"
-                                                     code:1
-                                                 userInfo:[NSDictionary dictionaryWithObject:NSLocalizedString(@"Unknown Error", nil)
-                                                                                      forKey:NSLocalizedDescriptionKey]]];
-    }];
-    
-    [request startAsynchronous];
-
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFPlaintextResponseSerializer serializer];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    [manager.requestSerializer setValue:@"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10)" forHTTPHeaderField:@"User-Agent"];
+    NSDictionary *parameters = @{@"username": username,
+                                 @"password": [NSString stringWithFormat:@"{MD5_HEX}%@", [TunetNetworkUtils md5: password]],
+                                 @"ac_id": @"1",
+                                 @"action": @"login"};
+    [manager POST:@TUNET_LOGIN_URL parameters:parameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              NSString * response = (NSString *)responseObject;
+              NSLog(@"Response: %@", response);
+              [self loginDoneWithError:[self getErrorFromResponse:response]];
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              [self loginDoneWithError:error];
+          }];
 }
 
 - (IBAction)doLogin:(id)sender {
     [self doLoginFromUserCmd:YES];
+}
+
+#define LOGIN_SUCCESS_RESPONSE "Login is successful."
+#define LOGIN_ALREADY_ONLINE_RESPONSE "IP has been online, please logout."
+
+- (NSError *)getErrorFromResponse: (NSString *)response {
+    NSError * err = nil;
+    if([response isEqualToString: @LOGIN_SUCCESS_RESPONSE])
+        return err;
+    
+    NSString * errorString = nil;
+    if([response isEqualToString: @LOGIN_ALREADY_ONLINE_RESPONSE])
+        errorString = NSLocalizedString(@LOGIN_ALREADY_ONLINE_RESPONSE, nil);
+    else {
+        NSInteger error_num = [[response substringFromIndex:1] integerValue];
+        switch(error_num) {
+            case 3001: errorString = NSLocalizedString(@"Quota outage", nil); break;
+            case 3004:
+            case 2616: errorString = NSLocalizedString(@"Insufficient balance", nil); break;
+            case 2531: errorString = NSLocalizedString(@"User does not exist", nil); break;
+            case 2532: errorString = NSLocalizedString(@"Too fast", nil); break;
+            case 2533: errorString = NSLocalizedString(@"Too much times", nil); break;
+            case 2553: errorString = NSLocalizedString(@"Wrong password", nil); break;
+            case 2620: errorString = NSLocalizedString(@"Already online", nil); break;
+            case 2840: errorString = NSLocalizedString(@"Internal address", nil); break;
+            case 2842: errorString = NSLocalizedString(@"Authorization not required", nil); break;
+            default: errorString = NSLocalizedString(@"Unknown error", nil); break;
+                
+        }
+    }
+    return [NSError errorWithDomain:@"loginError" code:0 userInfo:[NSDictionary dictionaryWithObject:errorString forKey:NSLocalizedDescriptionKey]];
 }
 
 @end

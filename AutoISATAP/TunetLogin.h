@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ASIHTTPRequest.h"
 
 
 @interface TunetLogin : NSObject
@@ -36,6 +35,8 @@ typedef enum {
 
 - (void)updateMenuItem;
 - (void)sendUserNotification;
+
+- (NSError *)getErrorFromResponse: (NSString *)response;
 
 - (IBAction)doLogin:(id)sender;
 

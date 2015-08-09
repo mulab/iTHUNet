@@ -69,6 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		106A0AE4F3349577D50C45CA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DA1193C51952643B00D2676E /* iTHUNet-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iTHUNet-Prefix.pch"; sourceTree = "<group>"; };
 		DA1193C71952678400D2676E /* TunetISATAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TunetISATAPHelper.h; sourceTree = "<group>"; };
 		DA1193C81952678400D2676E /* TunetISATAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TunetISATAPHelper.m; sourceTree = "<group>"; };
@@ -116,7 +117,7 @@
 		DA70E123194C386C00540D41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DA70E125194C386C00540D41 /* AutoISATAPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoISATAPTests.m; sourceTree = "<group>"; };
 		DA70E136194C6C3F00540D41 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		DB822B19610F45938B707491 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		E2EE65B077FC86DCDD79C7D5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FBAE248EF4E646BEB26733DF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -149,6 +150,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B8CE51AC63B81C134082A8C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				106A0AE4F3349577D50C45CA /* Pods.debug.xcconfig */,
+				E2EE65B077FC86DCDD79C7D5 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DA1193E11952C1C400D2676E /* LaunchAtLoginController */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,7 +199,7 @@
 				DA60FFF4194F120300BAC48F /* TunetISATAPHelper */,
 				DA70E0FA194C386B00540D41 /* Frameworks */,
 				DA70E0F9194C386B00540D41 /* Products */,
-				DB822B19610F45938B707491 /* Pods.xcconfig */,
+				B8CE51AC63B81C134082A8C6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -428,7 +438,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -636,7 +646,7 @@
 		};
 		DA70E12A194C386C00540D41 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB822B19610F45938B707491 /* Pods.xcconfig */;
+			baseConfigurationReference = 106A0AE4F3349577D50C45CA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "BlahGeek's Self-Signed App";
@@ -651,7 +661,7 @@
 		};
 		DA70E12B194C386C00540D41 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB822B19610F45938B707491 /* Pods.xcconfig */;
+			baseConfigurationReference = E2EE65B077FC86DCDD79C7D5 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "BlahGeek's Self-Signed App";
