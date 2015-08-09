@@ -163,6 +163,8 @@
     }
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    [manager.requestSerializer setTimeoutInterval:1];
     NSDictionary *parameters = @{@"bssid": bssid,
                                  @"mac": hwaddr};
     [manager GET:@TUNET_LOCATION_URL
@@ -208,6 +210,7 @@
     manager.responseSerializer = [AFPlaintextResponseSerializer serializer];
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
     [manager.requestSerializer setValue:@"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10)" forHTTPHeaderField:@"User-Agent"];
+    [manager.requestSerializer setTimeoutInterval:1];
     NSDictionary *parameters = @{@"username": username,
                                  @"password": [NSString stringWithFormat:@"{MD5_HEX}%@", [TunetNetworkUtils md5: password]],
                                  @"ac_id": @"1",
