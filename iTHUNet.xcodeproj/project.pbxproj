@@ -10,7 +10,6 @@
 		4EAAB60954394EE19E108D5A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAE248EF4E646BEB26733DF /* libPods.a */; };
 		DA1193C61952656900D2676E /* com.blahgeek.TunetISATAPHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA60FFF3194F120300BAC48F /* com.blahgeek.TunetISATAPHelper */; };
 		DA1193C91952678400D2676E /* TunetISATAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1193C81952678400D2676E /* TunetISATAPHelper.m */; };
-		DA1193CE1952B4F600D2676E /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = DA1193CD1952B4F600D2676E /* icon-small.png */; };
 		DA1193D31952B86500D2676E /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA1193D51952B86500D2676E /* Preferences.xib */; };
 		DA1193DB1952BEEA00D2676E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA1193DA1952BEEA00D2676E /* Localizable.strings */; };
 		DA1193DF1952C1BD00D2676E /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1193DD1952C1BD00D2676E /* LaunchAtLoginController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -73,7 +72,6 @@
 		DA1193C51952643B00D2676E /* iTHUNet-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iTHUNet-Prefix.pch"; sourceTree = "<group>"; };
 		DA1193C71952678400D2676E /* TunetISATAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TunetISATAPHelper.h; sourceTree = "<group>"; };
 		DA1193C81952678400D2676E /* TunetISATAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TunetISATAPHelper.m; sourceTree = "<group>"; };
-		DA1193CD1952B4F600D2676E /* icon-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-small.png"; path = "../icon-small.png"; sourceTree = "<group>"; };
 		DA1193D01952B6ED00D2676E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		DA1193D21952B6ED00D2676E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		DA1193D61952B87400D2676E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Preferences.xib; sourceTree = "<group>"; };
@@ -262,7 +260,6 @@
 		DA70E102194C386B00540D41 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DA1193CD1952B4F600D2676E /* icon-small.png */,
 				DA70E103194C386B00540D41 /* iTHUNet-Info.plist */,
 				DA70E104194C386B00540D41 /* InfoPlist.strings */,
 				DA1193DA1952BEEA00D2676E /* Localizable.strings */,
@@ -394,7 +391,6 @@
 				DA70E10C194C386B00540D41 /* Credits.rtf in Resources */,
 				DA1193DB1952BEEA00D2676E /* Localizable.strings in Resources */,
 				DA70E112194C386B00540D41 /* MainMenu.xib in Resources */,
-				DA1193CE1952B4F600D2676E /* icon-small.png in Resources */,
 				DA1193E01952C1BD00D2676E /* README.md in Resources */,
 				DA1193D31952B86500D2676E /* Preferences.xib in Resources */,
 			);
@@ -537,7 +533,7 @@
 		DA60FFFA194F120300BAC48F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "BlahGeek's Self-Signed App";
+				CODE_SIGN_IDENTITY = "BlahGeek Signed Application";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -559,7 +555,7 @@
 		DA60FFFB194F120300BAC48F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "BlahGeek's Self-Signed App";
+				CODE_SIGN_IDENTITY = "BlahGeek Signed Application";
 				OTHER_LDFLAGS = (
 					"-sectcreate",
 					__TEXT,
@@ -649,7 +645,7 @@
 			baseConfigurationReference = 106A0AE4F3349577D50C45CA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "BlahGeek's Self-Signed App";
+				CODE_SIGN_IDENTITY = "BlahGeek Signed Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AutoISATAP/iTHUNet-Prefix.pch";
@@ -664,7 +660,7 @@
 			baseConfigurationReference = E2EE65B077FC86DCDD79C7D5 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "BlahGeek's Self-Signed App";
+				CODE_SIGN_IDENTITY = "BlahGeek Signed Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AutoISATAP/iTHUNet-Prefix.pch";
