@@ -67,6 +67,7 @@ static NSDictionary * defaultValues() {
 - (void) awakeFromNib {
     self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     self->statusBarIcon = [NSImage imageNamed:@"StatusIcon"];
+    [self->statusBarIcon setTemplate:YES];
     [self.statusBar setImage: self->statusBarIcon];
     self.statusBar.menu = self.statusMenu;
     self.statusBar.highlightMode = YES;
